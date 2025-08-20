@@ -1,0 +1,7 @@
+packages:
+  # plugin core libraries, SDK and CLI
+  - packages/*
+  # plugin starter templates
+  - apps/*
+  # plugin monorepo internal tools
+  - tools/*
