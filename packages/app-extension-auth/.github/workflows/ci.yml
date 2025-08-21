@@ -1,0 +1,28 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  push:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install
+      - name: Lint
+        run: pnpm run lint
+      - name: Check types
+        run: pnpm run check:types
+      - name: Test
+        run: pnpm run test
+      - name: Build
+        run: pnpm run build
