@@ -2,7 +2,7 @@
   <a href="https://www.storyblok.com?utm_source=github.com&utm_medium=readme&utm_campaign=monoblok" align="center">
     <img src="https://raw.githubusercontent.com/storyblok/.github/refs/heads/main/profile/public/github-banner.png" alt="Storyblok Logo">
   </a>
-  <h1 align="center">Plugblok</h1>
+  <h1 align="center">Pluginsblok</h1>
   <p align="center">
     A monorepo that consolidates all plugins related open source projects from the Storyblok organization. This project aims to centralize the development, maintenance, and contribution to Storyblok's ecosystem of plugin libraries, SDK, CLI and starter templates.
   </p>
@@ -62,8 +62,8 @@ This repository represents an ongoing migration from a polyrepo structure to a u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/storyblok/plugblok.git
-   cd plugblok
+   git clone https://github.com/storyblok/pluginsblok.git
+   cd pluginsblok
    ```
 
 2. Install dependencies:
@@ -145,14 +145,14 @@ For more advanced NX usage, we recommend exploring:
 
 ### Repository Administration
 
-For repository administrators, we provide the `plugblok-cli` tool to help manage the monorepo. This tool assists with:
+For repository administrators, we provide the `pluginsblok-cli` tool to help manage the monorepo. This tool assists with:
 
 - Package migration
 - Dependency management
 - Repository maintenance
 - Release coordination
 
-See the [plugblok-cli tool](tools/plugblok) for detailed documentation and usage instructions.
+See the [pluginsblok-cli tool](tools/pluginsblok) for detailed documentation and usage instructions.
 
 ## 📄 Contributing
 

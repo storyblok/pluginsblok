@@ -1,5 +1,5 @@
 {
-  "name": "plugblok",
+  "name": "pluginsblok",
   "version": "0.0.1",
   "description": "Official monorepo for Storyblok plugins open source packages",
   "packageManager": "pnpm@10.12.1",
