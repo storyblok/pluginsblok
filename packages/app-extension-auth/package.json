@@ -16,11 +16,11 @@
     "dist/"
   ],
   "scripts": {
-    "check:types": "tsc --noemit",
     "lint": "eslint .",
-    "build": "pnpm run check:types && rollup -c",
+    "build": "pnpm run test:types && rollup -c",
     "start": "rollup -c -w",
-    "test": "jest"
+    "test": "jest",
+    "test:types": "tsc --noemit"
   },
   "engines": {
     "node": ">=14.21.3"
