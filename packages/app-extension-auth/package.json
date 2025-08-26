@@ -18,7 +18,7 @@
   "scripts": {
     "lint": "eslint .",
     "build": "pnpm run test:types && rollup -c",
-    "start": "rollup -c -w",
+    "dev": "rollup -c -w",
     "test": "jest",
     "test:types": "tsc --noemit"
   },
