@@ -1,0 +1,29 @@
+# js
+node_modules/
+
+# Output
+dist/
+stats.html
+
+# Yarn
+yarn-error.log
+yarn-debug.log*
+yarn-error.log*
+
+# Yarn (https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored)
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# IDE
+.idea
+
+# Environment
+.env.*
+
+# This project uses yarn. We must not have conflicting lock files.
+package-lock.json

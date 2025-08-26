@@ -1,0 +1,8 @@
+{
+  "@storyblok/app-extension-auth": {
+    "remote": "storyblok-app-extension-auth",
+    "repo": "storyblok/app-extension-auth",
+    "branch": "main",
+    "path": "packages/app-extension-auth"
+  }
+}
