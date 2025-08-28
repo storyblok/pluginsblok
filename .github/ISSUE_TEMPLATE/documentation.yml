@@ -35,6 +35,8 @@ body:
       description: Which Storyblok Plugin package is this documentation related to?
       options:
         - "@storyblok/app-extension-auth"
+        - "@storyblok/field-plugin"
+        - "@storyblok/field-plugin-cli"
         - "Multiple packages"
         - "Repository-wide documentation"
     validations:
