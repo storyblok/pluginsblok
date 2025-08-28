@@ -2,7 +2,6 @@
 node_modules
 dist
 packages/*/dist
-**/.turbo/
 
 # local env files
 .env.local
@@ -46,3 +45,5 @@ packages/cli/templates/**/.yarn/*
 !packages/cli/templates/**/.yarn/releases
 !packages/cli/templates/**/.yarn/sdks
 !packages/cli/templates/**/.yarn/versions
+
+packages/cli/templates/**/tsconfig.tsbuildinfo

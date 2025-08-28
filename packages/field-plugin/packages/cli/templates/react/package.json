@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:config": "vite --config node_modules/.react-vite.config.ts",
     "test": "vitest",
+    "test:ui": "vitest --config node_modules/.react-vite.config.ts --ui",
     "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

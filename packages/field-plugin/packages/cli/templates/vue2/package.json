@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:config": "vite --config node_modules/.vue2-vite.config.ts",
     "build": "vite build && npm run build:post",
     "build:post": "rollup --config rollup.postbuild.config.js",
     "test": "vitest run",
+    "test:ui": "vitest --config node_modules/.vue2-vite.config.ts --ui",
     "test:watch": "vitest watch",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },

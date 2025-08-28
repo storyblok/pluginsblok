@@ -16,11 +16,11 @@
     "directory": "packages/field-plugin-cli"
   },
   "scripts": {
-    "prepare": "yarn build",
+    "prepare": "pnpm build",
     "dev": "node bin.js",
-    "create": "yarn build && yarn dev create",
-    "deploy": "yarn build && yarn dev deploy",
-    "build": "vite build && cp -rP templates dist/ && yarn clean:dist",
+    "create": "pnpm dev create",
+    "deploy": "pnpm dev deploy",
+    "build": "vite build && cp -rP templates dist/ && pnpm clean:dist",
     "clean:dist": "cd dist && find . \\( -name 'node_modules' -o -name 'dist' \\) -type d -prune -exec rm -rf '{}' \\;",
     "test": "vitest run",
     "test:watch": "vitest watch"

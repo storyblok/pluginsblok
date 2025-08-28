@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest run",
-    "watch": "vitest watch",
+    "test:watch": "vitest watch",
     "build": "unbuild"
   },
   "devDependencies": {

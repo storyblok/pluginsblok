@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:config": "vite --config node_modules/.js-vite.config.ts",
     "build": "vite build",
-    "check:types": "tsc --noEmit",
+    "test:types": "tsc --noEmit",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {

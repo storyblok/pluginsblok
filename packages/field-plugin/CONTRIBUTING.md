@@ -20,7 +20,7 @@ If you've discovered a bug or have a feature request, please create [an issue](h
 
 ## Monorepo
 
-This repository is a monorepo that includes multiple packages. We use Yarn Workspace to manage its structure.
+This repository is a monorepo that includes multiple packages. We use pnpm workspaces to manage its structure.
 
 - Library (`packages/field-plugin`): This is the core library. It exports the `createFieldPlugin()` function, which sends and receives events between Storyblok's Visual Editor and your Field Plugin.
 - Demo (`packages/demo`): This is a demo Field Plugin that covers the basic functionalities of the Field Plugin SDK.
@@ -56,7 +56,7 @@ We strive to keep pull requests as small as possible to facilitate more effectiv
 ## Requirements
 
 - Node.js 22.18.0
-- Yarn 3.2.4
+- pnpm 10.15.0
 
 > **Note**
 > We are using these versions to develop our Field Plugin SDK. Consumers don't need to meet these requirements. Our boilerplates use [vite](https://vitejs.dev/), which handles browser compatibility automatically.
@@ -72,16 +72,16 @@ Here are the projects in this monorepo, and how to set up and develop them.
 At the root of this repository, run the following command to run unit tests:
 
 ```sh
-yarn test:lib
+pnpm --filter field-plugin test:lib
 ```
 
 #### Test with demo and Sandbox
 
 To test the library with a demo, you need to run three commands in parallel:
 
-- `yarn dev:lib`: Watches file changes in the library and updates the bundle output.
-- `yarn dev:demo`: Runs the demo Field Plugin located at `packages/demo`. Update it to test changes to the library.
-- `yarn dev:sandbox`: Runs the Sandbox locally.
+- `pnpm --filter field-plugin dev:lib`: Watches file changes in the library and updates the bundle output.
+- `pnpm --filter field-plugin dev:demo`: Runs the demo Field Plugin located at `packages/demo`. Update it to test changes to the library.
+- `pnpm --filter field-plugin dev:sandbox`: Runs the Sandbox locally.
 
 Run all the commands in three separate terminals, then open the Sandbox at `http://localhost:7070/`. This Container hosts the demo Field Plugin. Whenever you change a file in the library, the bundle output updates automatically and the demo app does Hot-Module Replacement (HMR). You can then seamlessly test it in the running Sandbox application.
 
@@ -90,13 +90,13 @@ Run all the commands in three separate terminals, then open the Sandbox at `http
 To test the CLI, make any changes under `packages/cli` and then run the following command.
 
 ```sh
-yarn build:cli
+pnpm --filter field-plugin build:cli
 ```
 
-To test the local version of the CLI, run `yarn dev:cli <command>`. It is recommended to test the CLI outside of the Field Plugin SDK repository. To do this, run the following:
+To test the local version of the CLI, run `pnpm --filter field-plugin dev:cli <command>`. It is recommended to test the CLI outside of the Field Plugin SDK repository. To do this, run the following:
 
 ```sh
-yarn dev:cli create --dir ../<SOME-TEST-DIRECTORY>
+pnpm --filter field-plugin dev:cli create --dir /Users/<YOUR-USER>/<SOME-TEST-DIRECTORY>
 ```
 
 A plugin will be created under the test directory.
@@ -104,7 +104,7 @@ A plugin will be created under the test directory.
 The CLI package currently has few unit tests, but you can execute them as follows:
 
 ```sh
-yarn test:cli
+pnpm --filter field-plugin test:cli
 ```
 
 ### Templates
@@ -114,7 +114,7 @@ yarn test:cli
 If you want to try the React template, run this command:
 
 ```sh
-yarn dev:react
+pnpm --filter field-plugin dev:react
 ```
 
 You can also use the commands for other templates.
@@ -146,16 +146,16 @@ This section will be filled once the helpers are shipped. Work is in progress.
 You can release either `@storyblok/field-plugin` or `@storyblok/field-plugin-cli`. To begin the release process, run the following command on the `main` branch:
 
 ```sh
-yarn bump-version
+pnpm --filter field-plugin bump-version
 ```
 
-This will prompt you to select which package (`@storyblok/field-plugin` or `@storyblok/field-plugin-cli`) to release and the version number. After entering the required information, a pull request will be created automatically. This pull request will include changes in the `package.json` and possibly the `yarn.lock`.
+This will prompt you to select which package (`@storyblok/field-plugin` or `@storyblok/field-plugin-cli`) to release and the version number. After entering the required information, a pull request will be created automatically. This pull request will include changes in the `package.json` and possibly the `pnpm-lock.yaml`.
 
 Once this pull request is reviewed and merged, you'll get a commit like [this](https://github.com/storyblok/field-plugin/commit/b4bd948ce3d26f0905352ddbe474ebc9e2f89159).
 
 Then, go to [Releases](https://github.com/storyblok/field-plugin/releases) and draft a new release:
 
-- Create a tag with the format `<PACKAGE-NAME>@<VERSION>`; for example,  `@storyblok/field-plugin@0.0.1` and `@storyblok/field-plugin-cli@1.0.0-beta.2`
+- Create a tag with the format `<PACKAGE-NAME>@<VERSION>`; for example, `@storyblok/field-plugin@0.0.1` and `@storyblok/field-plugin-cli@1.0.0-beta.2`
 - Set the title to the same name.
 - Generate release notes, and ensure that the content is accurate; for example, check that there are no missing bullet points, and check that library changes should not be listed in CLI release notes.
 

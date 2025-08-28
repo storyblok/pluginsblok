@@ -71,7 +71,7 @@ Inside the root of each field plugin, a `field-plugin.config.json` file would be
 
 ## Reading the manifest file (CLI)
 
-Each time a user runs `yarn dev` inside the plugin's root folder, our CLI would check if a `field-plugin.config.json` was provided and if so, it will read all options from it and, through our `printDev()` Vite plugin, provides a Sandbox URL with all options already included.
+Each time a user runs `pnpm dev` inside the plugin's root folder, our CLI would check if a `field-plugin.config.json` was provided and if so, it will read all options from it and, through our `printDev()` Vite plugin, provides a Sandbox URL with all options already included.
 
 The URL with these options should be similiar with:
 

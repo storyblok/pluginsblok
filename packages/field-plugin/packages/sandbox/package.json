@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "yarn check:types && vite build",
-    "check:types": "tsc --noEmit"
+    "build": "pnpm test:types && vite build",
+    "test:types": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -24,6 +24,7 @@
     "usehooks-ts": "2.16.0"
   },
   "devDependencies": {
+    "@types/react": "^18.3.1",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^3.0.0",
     "sass": "^1.86.1",

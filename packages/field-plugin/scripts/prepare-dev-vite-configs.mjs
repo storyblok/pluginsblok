@@ -1,8 +1,8 @@
 #!/usr/bin/env zx
 /*
-  It's totally okay to run `yarn workspace field-plugin-react-template dev`.
+  It's totally okay to run `nx run field-plugin-react-template:dev`.
   However, if you want to test changes in `@storyblok/field-plugin` library (under `packages/field-plugin/` folder),
-  you must run `yarn build:lib` to reflect the change in the react template.
+  you must run `pnpm --filter field-plugin build:lib` to reflect the change in the react template.
   To avoid this inefficiency, we can add `resolve.alias` config into `vite.config.ts` of each template.
   This will resolve the source code of the library instead of its bundle output.
 
