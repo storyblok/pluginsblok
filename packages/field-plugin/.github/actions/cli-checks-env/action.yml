@@ -1,0 +1,20 @@
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.18.0
+        cache: 'yarn'
+    - run: git config --global user.email "you@example.com"
+      shell: bash
+    - run: git config --global user.name "Your Name"
+      shell: bash
+    - run: yarn install
+      shell: bash
+    - run: yarn build:lib
+      shell: bash
+    - run: cd packages/field-plugin && npm link
+      shell: bash
+    - run: yarn build:cli
+      shell: bash

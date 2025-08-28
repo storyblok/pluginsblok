@@ -1,0 +1,85 @@
+{
+  "projectName": "field-plugin",
+  "projectOwner": "storyblok",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 6,
+  "contributors": [
+    {
+      "login": "BibiSebi",
+      "name": "Bibiana Sebestianova",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17590227?v=4",
+      "profile": "https://bibidev.vercel.app/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "johannes-lindgren",
+      "name": "Johannes Lindgren",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14206504?v=4",
+      "profile": "https://github.com/johannes-lindgren",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "eunjae-lee",
+      "name": "Eunjae Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/499898?v=4",
+      "profile": "https://twitter.com/eunjae_lee",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "demetriusfeijoo",
+      "name": "Demetrius Feijóo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1240591?v=4",
+      "profile": "https://www.linkedin.com/in/demetriusfeijoo/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "plitzenberger",
+      "name": "Philipp Litzenberger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2835032?v=4",
+      "profile": "https://www.bendcircular.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hoersamu",
+      "name": "Samuel Höra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14295796?v=4",
+      "profile": "https://hoera.dev",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "Dawntraoz",
+      "name": "Alba Silvente Fuentes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36744484?v=4",
+      "profile": "https://links.dawntraoz.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ECJ222",
+      "name": "ECJ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39567763?v=4",
+      "profile": "https://github.com/ECJ222",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}

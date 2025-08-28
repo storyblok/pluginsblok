@@ -1,0 +1,26 @@
+name: Publish CLI to NPM
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-npm:
+    if: startsWith(github.event.release.name, '@storyblok/field-plugin-cli@')
+    name: Publish CLI to NPM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.18.0
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn install --immutable
+      - name: Build the CLI
+        run: yarn build:cli
+      - name: Publish the package to NPM
+        run: ./scripts/publish.ts cli
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}

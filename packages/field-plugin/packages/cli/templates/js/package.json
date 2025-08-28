@@ -1,0 +1,19 @@
+{
+  "name": "field-plugin-js-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "check:types": "tsc --noEmit",
+    "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
+  },
+  "dependencies": {
+    "@storyblok/field-plugin": "1.7.0"
+  },
+  "devDependencies": {
+    "vite": "5.4.16",
+    "vite-plugin-css-injected-by-js": "2.4.0"
+  }
+}
