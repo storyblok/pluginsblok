@@ -13,12 +13,11 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "postinstall": "pnpm build && pnpm prepare-dev-configs",
+    "postinstall": "pnpm build",
     "build": "nx run-many -t=build --projects=@storyblok/field-plugin,@storyblok/manifest-helper,@storyblok/lib-helpers,@storyblok/field-plugin-cli,sandbox",
     "build:lib": "nx run @storyblok/field-plugin:build",
     "build:cli": "nx run @storyblok/field-plugin-cli:build",
     "build:sandbox": "nx run sandbox:build",
-    "prepare-dev-configs": "./scripts/prepare-dev-vite-configs.mjs",
     "test": "pnpm test:lib",
     "test:lib": "nx run @storyblok/field-plugin:test",
     "test:lib:watch": "nx run @storyblok/field-plugin:test:watch",
@@ -29,15 +28,7 @@
     "dev:demo": "nx run demo:dev",
     "dev:cli": "nx run @storyblok/field-plugin-cli:dev",
     "dev:lib": "nx run @storyblok/field-plugin:dev",
-    "dev:sandbox": "nx run sandbox:dev",
-    "dev:react": "nx run field-plugin-react-template:dev:config",
-    "dev:js": "nx run field-plugin-js-template:dev:config",
-    "dev:vue2": "nx run field-plugin-vue2-template:dev:config",
-    "dev:vue3": "nx run field-plugin-vue3-template:dev:config",
-    "test:react": "nx run field-plugin-react-template:test:ui",
-    "test:vue2": "nx run field-plugin-vue2-template:test:ui",
-    "test:vue3": "nx run field-plugin-vue3-template:test:ui",
-    "bump-version": "./scripts/bump-version.ts"
+    "dev:sandbox": "nx run sandbox:dev"
   },
   "devDependencies": {
     "@eslint/js": "9.23.0",

@@ -20,7 +20,7 @@
     "dev": "node bin.js",
     "create": "pnpm dev create",
     "deploy": "pnpm dev deploy",
-    "build": "vite build && cp -rP templates dist/ && pnpm clean:dist",
+    "build": "vite build && cp -rP templates dist/ && node scripts/fix-workspace-versions.mjs && pnpm clean:dist",
     "clean:dist": "cd dist && find . \\( -name 'node_modules' -o -name 'dist' \\) -type d -prune -exec rm -rf '{}' \\;",
     "test": "vitest run",
     "test:watch": "vitest watch"
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@storyblok/manifest-helper": "workspace:*",
+    "@storyblok/field-plugin": "workspace:*",
     "@types/execa": "2.0.0",
     "@types/fs-extra": "11.0.4",
     "@types/prompts": "2.4.9",
