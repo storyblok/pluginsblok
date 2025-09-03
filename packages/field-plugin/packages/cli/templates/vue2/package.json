@@ -7,9 +7,6 @@
     "dev": "vite",
     "build": "vite build && npm run build:post",
     "build:post": "rollup --config rollup.postbuild.config.js",
-    "test": "vitest run",
-    "test:ui": "vitest --ui",
-    "test:watch": "vitest watch",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {
