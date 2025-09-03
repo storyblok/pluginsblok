@@ -411,7 +411,7 @@ importers:
         specifier: 14.6.1
         version: 14.6.1(@testing-library/dom@9.3.4)
       '@testing-library/vue':
-        specifier: 8.1.0
+        specifier: ^8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.5.20)(vue@3.5.20(typescript@5.8.2))
       '@vitejs/plugin-vue':
         specifier: ^4.6.2
