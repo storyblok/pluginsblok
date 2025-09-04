@@ -72,16 +72,16 @@ Here are the projects in this monorepo, and how to set up and develop them.
 At the root of this repository, run the following command to run unit tests:
 
 ```sh
-pnpm --filter field-plugin test:lib
+pnpm nx run @storyblok/field-plugin:test
 ```
 
 #### Test with demo and Sandbox
 
 To test the library with a demo, you need to run three commands in parallel:
 
-- `pnpm --filter field-plugin dev:lib`: Watches file changes in the library and updates the bundle output.
-- `pnpm --filter field-plugin dev:demo`: Runs the demo Field Plugin located at `packages/demo`. Update it to test changes to the library.
-- `pnpm --filter field-plugin dev:sandbox`: Runs the Sandbox locally.
+- `pnpm nx run @storyblok/field-plugin:dev`: Watches file changes in the library and updates the bundle output.
+- `pnpm nx run demo:dev`: Runs the demo Field Plugin located at `packages/demo`. Update it to test changes to the library.
+- `pnpm nx run sandbox:dev`: Runs the Sandbox locally.
 
 Run all the commands in three separate terminals, then open the Sandbox at `http://localhost:7070/`. This Container hosts the demo Field Plugin. Whenever you change a file in the library, the bundle output updates automatically and the demo app does Hot-Module Replacement (HMR). You can then seamlessly test it in the running Sandbox application.
 
@@ -90,13 +90,13 @@ Run all the commands in three separate terminals, then open the Sandbox at `http
 To test the CLI, make any changes under `packages/cli` and then run the following command.
 
 ```sh
-pnpm --filter field-plugin build:cli
+pnpm nx run @storyblok/field-plugin-cli:build
 ```
 
-To test the local version of the CLI, run `pnpm --filter field-plugin dev:cli <command>`. It is recommended to test the CLI outside of the Field Plugin SDK repository. To do this, run the following:
+To test the local version of the CLI, run `pnpm nx run @storyblok/field-plugin-cli:dev <command>`. It is recommended to test the CLI outside of the Field Plugin SDK repository. To do this, run the following:
 
 ```sh
-pnpm --filter field-plugin dev:cli create --dir /Users/<YOUR-USER>/<SOME-TEST-DIRECTORY>
+pnpm nx run @storyblok/field-plugin-cli:dev create --dir /Users/<YOUR-USER>/<SOME-TEST-DIRECTORY>
 ```
 
 A plugin will be created under the test directory.
@@ -104,7 +104,7 @@ A plugin will be created under the test directory.
 The CLI package currently has few unit tests, but you can execute them as follows:
 
 ```sh
-pnpm --filter field-plugin test:cli
+pnpm nx run @storyblok/field-plugin-cli:test
 ```
 
 ### Templates
@@ -114,15 +114,15 @@ pnpm --filter field-plugin test:cli
 If you want to try the React template, run this command:
 
 ```sh
-pnpm --filter field-plugin dev:react
+pnpm nx run field-plugin-react-template:dev
 ```
 
 You can also use the commands for other templates.
 
-- dev:react
-- dev:js
-- dev:vue2
-- dev:vue3
+- field-plugin-react-template:dev
+- field-plugin-js-template:dev
+- field-plugin-vue2-template:dev
+- field-plugin-vue3-template:dev
 
 #### Adding a new template
 
@@ -146,7 +146,7 @@ This section will be filled once the helpers are shipped. Work is in progress.
 You can release either `@storyblok/field-plugin` or `@storyblok/field-plugin-cli`. To begin the release process, run the following command on the `main` branch:
 
 ```sh
-pnpm --filter field-plugin bump-version
+pnpm nx run field-plugin:bump-version
 ```
 
 This will prompt you to select which package (`@storyblok/field-plugin` or `@storyblok/field-plugin-cli`) to release and the version number. After entering the required information, a pull request will be created automatically. This pull request will include changes in the `package.json` and possibly the `pnpm-lock.yaml`.

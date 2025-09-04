@@ -105,7 +105,7 @@ While PNPM manages our packages, we use NX to optimize our development workflow.
 pnpm build
 
 # Build a specific package
-pnpm build @storyblok/field-plugin
+pnpm nx run @storyblok/field-plugin:build
 
 # Run tests for affected packages
 pnpm nx affected:test
@@ -124,19 +124,19 @@ pnpm nx affected --target=build
 
 ```bash
 # Start development mode for a package
-pnpm dev @storyblok/field-plugin
+pnpm nx run @storyblok/field-plugin:dev
 
 # Run tests in watch mode
-pnpm test:watch @storyblok/field-plugin
+pnpm nx run @storyblok/field-plugin:test:watch
 
 # Lint all packages
 pnpm lint
 
 # Format all packages
-pnpm format
+pnpm nx run-many --target=format
 
 # Check types
-pnpm type-check
+pnpm nx run-many --target=test:types
 ```
 
 For more advanced NX usage, we recommend exploring:
