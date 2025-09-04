@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "unbuild --stub",
-    "postinstall": "pnpm run build"
+    "postinstall": "pnpm nx run pluginsblok-cli:build"
   },
   "dependencies": {
     "@types/license-checker": "^25.0.6",

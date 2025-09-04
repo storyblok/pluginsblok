@@ -16,7 +16,6 @@
     "directory": "packages/field-plugin-cli"
   },
   "scripts": {
-    "prepare": "pnpm build",
     "dev": "node bin.js",
     "create": "pnpm dev create",
     "deploy": "pnpm dev deploy",
