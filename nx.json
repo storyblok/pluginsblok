@@ -5,7 +5,7 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/dist"],
+      "outputs": ["{projectRoot}/dist", "{projectRoot}/dist/**/*"],
       "cache": true
     },
     "test": {
@@ -15,6 +15,7 @@
       "cache": true
     },
     "dev": {
+      "dependsOn": ["^build"],
       "cache": false
     },
     "create": {

@@ -11,5 +11,11 @@
     "tsx": "4.19.1",
     "unbuild": "2.0.0",
     "zx": "8.1.8"
+  },
+  "nx": {
+    "implicitDependencies": [
+      "@storyblok/manifest-helper",
+      "@storyblok/field-plugin"
+    ]
   }
 }

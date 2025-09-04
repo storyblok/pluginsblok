@@ -113,6 +113,9 @@ pnpm nx affected:test
 # Show dependency graph
 pnpm nx graph
 
+# Show scripts for a specific project
+pnpm nx show project @storyblok/field-plugin
+
 # Run commands only on affected packages
 pnpm nx affected --target=build
 ```

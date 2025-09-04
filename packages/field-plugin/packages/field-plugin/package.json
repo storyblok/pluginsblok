@@ -58,5 +58,10 @@
   },
   "dependencies": {
     "valibot": "1.1.0"
+  },
+  "nx": {
+    "implicitDependencies": [
+      "@storyblok/manifest-helper"
+    ]
   }
 }

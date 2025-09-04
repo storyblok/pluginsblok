@@ -5,6 +5,7 @@ import { useState } from 'react'
 export const PreviewDimension: PluginComponent = (props) => {
   const { data, actions } = props
 
+  console.info(data)
   const [width, setWidth] = useState(300)
 
   const handleClickMobile = () => {
