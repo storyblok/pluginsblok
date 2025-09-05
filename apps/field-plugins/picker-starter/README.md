@@ -181,6 +181,14 @@ yarn install
 
 # then, serve the field plugin
 yarn dev
+
+# more commands for linting, testing and building
+yarn prettier
+yarn lint
+yarn test
+yarn test:types
+yarn build
+yarn preview
 ```
 
 Now open the Sandbox URL printed in your terminal:
@@ -195,5 +203,5 @@ You should see this:
 Deploy your field plugin with the [CLI](https://www.npmjs.com/package/@storyblok/field-plugin-cli). Issue a [personal access token](https://app.storyblok.com/#/me/account?tab=token), rename `.env.local.example` to `.env.example`, open the file, set the value `STORYBLOK_PERSONAL_ACCESS_TOKEN`, and from the **plugin's root folder**, run the following command:
 
 ```shell
-yarn deploy
+yarn deploy # (Official plugins) --skipPrompts --name sb-picker-starter --scope partner-portal
 ```

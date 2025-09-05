@@ -11,12 +11,33 @@ For those who prefer to work with JavaScript instead of TypeScript, they can ren
 To start the project locally, run:
 
 ```bash
+yarn install
 yarn dev
+```
+
+## Test and format the code
+
+```bash
+# Lint
+yarn lint
+# Format
+yarn prettier
+# Check types
+yarn test:types
+# Run tests
+yarn test
 ```
 
 ## What's next?
 
 If you want to deploy your field plugin to Storyblok, you can do so by using our [CLI](https://www.npmjs.com/package/@storyblok/field-plugin-cli).
+
+```bash
+# First needs to be build
+yarn build
+# Then using the `.env` you can deploy (only for Storyblok developers)
+yarn deploy # --skipPrompts --name storyblok-code-block --scope partner-portal
+```
 
 # App Description
 

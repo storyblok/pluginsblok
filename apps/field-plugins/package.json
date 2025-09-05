@@ -4,17 +4,10 @@
     "description": "A collection of open-source field plugins",
     "private": true,
     "scripts": {
-        "lint": "eslint .",
         "docs": "node generate-readme.js"
     },
     "keywords": [
         "storyblok"
-    ],
-    "workspaces": [
-        "code-block",
-        "tags",
-        "star-rating",
-        "picker-starter"
     ],
     "dependencies": {
         "gray-matter": "^4.0.2",

@@ -1,18 +1,18 @@
 {
   "name": "picker-starter",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "vitest",
+    "preview": "vite preview",
     "prettier": "prettier --check .",
     "lint": "eslint .",
-    "check:types": "vue-tsc --noEmit",
-    "preview": "vite preview",
-    "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
+    "test": "vitest",
+    "test:types": "vue-tsc --noEmit",
+    "deploy": "yarn build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {
     "@storyblok/design-system": "3.19.3",
