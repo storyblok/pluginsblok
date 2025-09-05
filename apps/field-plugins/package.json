@@ -1,0 +1,28 @@
+{
+    "name": "field-plugin-examples",
+    "version": "0.0.0",
+    "description": "A collection of open-source field plugins",
+    "private": true,
+    "scripts": {
+        "lint": "eslint .",
+        "docs": "node generate-readme.js"
+    },
+    "keywords": [
+        "storyblok"
+    ],
+    "workspaces": [
+        "code-block",
+        "tags",
+        "star-rating",
+        "picker-starter"
+    ],
+    "dependencies": {
+        "gray-matter": "^4.0.2",
+        "markdown-magic": "^0.1.25"
+    },
+    "devDependencies": {
+        "eslint": "^7.17.0",
+        "eslint-plugin-vue": "^7.4.1",
+        "prettier": "^2.8.8"
+    }
+}
