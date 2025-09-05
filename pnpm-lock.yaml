@@ -561,13 +561,13 @@ importers:
 
   packages/field-plugin/packages/lib-helpers/vite:
     dependencies:
-      '@storyblok/manifest-helper':
-        specifier: workspace:*
-        version: link:../../manifest-helper
       kleur:
         specifier: 4.1.5
         version: 4.1.5
     devDependencies:
+      '@storyblok/manifest-helper':
+        specifier: workspace:*
+        version: link:../../manifest-helper
       typescript:
         specifier: 5.8.2
         version: 5.8.2
