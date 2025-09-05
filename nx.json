@@ -15,7 +15,14 @@
       "cache": true
     },
     "dev": {
+      "dependsOn": ["^build"],
       "cache": false
+    },
+    "create": {
+      "dependsOn": ["build"]
+    },
+    "deploy": {
+      "dependsOn": ["build"]
     }
   },
   "tui": {

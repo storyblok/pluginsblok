@@ -1,0 +1,25 @@
+{
+  "name": "field-plugin-vue2-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:post",
+    "build:post": "rollup --config rollup.postbuild.config.js",
+    "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
+  },
+  "dependencies": {
+    "@storyblok/field-plugin": "workspace:*",
+    "vue": "^2.7.14"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "15.3.1",
+    "@rollup/plugin-replace": "5.0.7",
+    "@vitejs/plugin-vue2": "2.3.3",
+    "rollup": "3.29.5",
+    "typescript": "5.8.2",
+    "vite": "5.4.16",
+    "vite-plugin-css-injected-by-js": "2.4.0"
+  }
+}

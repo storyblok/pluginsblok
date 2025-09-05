@@ -1,1 +1,2 @@
-packages/app-extension-auth @storyblok/plugins
+packages/app-extension-auth @storyblok/plugins @storyblok/front-end
+packages/field-plugin @storyblok/plugins

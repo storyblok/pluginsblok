@@ -19,6 +19,8 @@ body:
       description: Which Storyblok Plugin package is this bug related to?
       options:
         - "@storyblok/app-extension-auth"
+        - "@storyblok/field-plugin"
+        - "@storyblok/field-plugin-cli"
         - "Multiple packages"
         - "Other/Unknown"
     validations:

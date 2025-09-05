@@ -1,6 +1,9 @@
 packages:
   # plugin core libraries, SDK and CLI
   - packages/*
+  - packages/field-plugin/packages/*
+  - packages/field-plugin/packages/cli/templates/*
+  - packages/field-plugin/packages/lib-helpers/*
   # plugin starter templates
   - apps/*
   # plugin monorepo internal tools

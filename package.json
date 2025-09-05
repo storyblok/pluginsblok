@@ -10,7 +10,8 @@
     "prepare": "husky",
     "lint": "nx run-many --target=lint",
     "lint:fix": "nx run-many --target=lint --fix",
-    "lint:affected": "nx affected:lint"
+    "lint:affected": "nx affected:lint",
+    "build": "nx run-many --target=build"
   },
   "workspaces": [
     "packages/*",

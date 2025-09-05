@@ -4,5 +4,11 @@
     "repo": "storyblok/app-extension-auth",
     "branch": "main",
     "path": "packages/app-extension-auth"
+  },
+  "field-plugin": {
+    "remote": "field-plugin",
+    "repo": "storyblok/field-plugin",
+    "branch": "main",
+    "path": "packages/field-plugin"
   }
 }

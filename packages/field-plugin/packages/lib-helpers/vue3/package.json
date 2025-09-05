@@ -1,0 +1,14 @@
+{
+  "name": "helper-vue3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@storyblok/field-plugin": "workspace:*",
+    "prettier": "3.5.3",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "typescript": "5.8.2"
+  }
+}

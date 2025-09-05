@@ -1,0 +1,52 @@
+{
+  "name": "@storyblok/field-plugin-cli",
+  "version": "1.5.4",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "field-plugin": "./bin.js"
+  },
+  "files": [
+    "bin.js",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storyblok/field-plugin.git",
+    "directory": "packages/field-plugin-cli"
+  },
+  "scripts": {
+    "dev": "node bin.js",
+    "create": "pnpm dev create",
+    "deploy": "pnpm dev deploy",
+    "build": "vite build && cp -rP templates dist/ && node scripts/fix-workspace-versions.mjs && pnpm clean:dist",
+    "clean:dist": "cd dist && find . \\( -name 'node_modules' -o -name 'dist' \\) -type d -prune -exec rm -rf '{}' \\;",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "commander": "^9.5.0",
+    "dotenv": "^16.4.7",
+    "execa": "^6.1.0",
+    "fs-extra": "^11.3.0",
+    "kleur": "^4.1.5",
+    "node-fetch": "^3.3.0",
+    "ora": "6.3.1",
+    "prompts": "^2.4.2",
+    "vite": "5.4.16",
+    "walkdir": "^0.4.1"
+  },
+  "devDependencies": {
+    "@storyblok/manifest-helper": "workspace:*",
+    "@types/execa": "2.0.0",
+    "@types/fs-extra": "11.0.4",
+    "@types/prompts": "2.4.9",
+    "temp-dir": "3.0.0",
+    "vitest": "2.1.9"
+  },
+  "nx": {
+    "implicitDependencies": [
+      "@storyblok/field-plugin"
+    ]
+  }
+}

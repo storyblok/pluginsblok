@@ -1,0 +1,19 @@
+{
+  "name": "@storyblok/lib-helpers",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "unbuild"
+  },
+  "devDependencies": {
+    "execa": "8.0.1",
+    "unbuild": "2.0.0",
+    "zx": "8.1.8"
+  },
+  "nx": {
+    "implicitDependencies": [
+      "@storyblok/manifest-helper"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "field-plugin-vue3-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
+  },
+  "dependencies": {
+    "@storyblok/field-plugin": "workspace:*",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/user-event": "14.6.1",
+    "@testing-library/vue": "8.1.0",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vitest/ui": "2.1.9",
+    "jsdom": "23.0.1",
+    "typescript": "5.8.2",
+    "vite": "5.4.16",
+    "vite-plugin-css-injected-by-js": "3.1.0",
+    "vitest": "2.1.9",
+    "vue-tsc": "2.2.8"
+  }
+}
