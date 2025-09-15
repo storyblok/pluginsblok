@@ -9,6 +9,3 @@ packages:
   # - apps/tool-plugins/*
   # plugin monorepo internal tools
   - tools/*
-exclude:
-  # exclude field plugin examples since they are outdated
-  - apps/*

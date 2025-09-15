@@ -1,28 +1,37 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultProject": "main",
+  "defaultBase": "main",
   "parallel": 5,
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "!{projectRoot}/apps/**/*"]
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
+      "inputs": ["default"],
       "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
     "test": {
+      "inputs": ["default"],
       "cache": true
     },
     "lint": {
+      "inputs": ["default"],
       "cache": true
     },
     "dev": {
       "dependsOn": ["^build"],
+      "inputs": ["default"],
       "cache": false
     },
     "create": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "inputs": ["default"]
     },
     "deploy": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "inputs": ["default"]
     }
   },
   "tui": {
