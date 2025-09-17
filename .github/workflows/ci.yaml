@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths-ignore:
       - "**/*.md"
+      - "apps/field-plugins/**"
   pull_request:
     branches: [main]
     paths-ignore:
       - "**/*.md"
+      - "apps/field-plugins/**"
 
 env:
   HUSKY: 0

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "lint": "eslint .",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "yarn build && npx @storyblok/field-plugin-cli@latest deploy"
