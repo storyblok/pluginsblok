@@ -1,4 +1,3 @@
-
 <img src="https://a.storyblok.com/f/51376/x/19b4879a86/logo.svg" width="200" alt="Storyblok Logo">
 
 # Field-type Examples
@@ -46,6 +45,7 @@ The following examples live in their own Github repository.
 | **[Hotspot Editor](https://github.com/cartok/storyblok-hotspot-editor)** <br/> A Storyblok field-type to create hotspot images | [cartok](http://github.com/cartok) |
 | **[Storyblok Meta Image](https://github.com/maoberlehner/storyblok-meta-image)** <br/> A Storyblok field-type plugin which provides an image field with meta data | [maoberlehner](http://github.com/maoberlehner) |
 <!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Contributing
 
 **Have an example?** Submit a PR or [open an issue]().We are happy to accept more examples from the community.
@@ -57,31 +57,21 @@ The following examples live in their own Github repository.
 
 2. Add a `README.md` file in your example folder with a markdown table of the following format:
 
-Name | Description | Author
------------- | ------------- | -------------
-Name of your field-type | Short description | [Your Github](https://github.com/lisilinhart/)
+| Name                    | Description       | Author              |
+| ----------------------- | ----------------- | ------------------- |
+| Name of your field-type | Short description | Your Github profile |
 
-3. Make sure your contribution matches the linting setup for this repo:
+3. Regenerate the README.md with the following command
 
-  Run the linting via
+```bash
+yarn docs
+```
 
-  ```bash
-  npm run lint
-  ```
-
-4. Regenerate the README.md with the following command
-
-  ```bash
-  npm run docs
-  ```
-
-5. Open a new pull request with your example. ⚡️
+4. Open a new pull request with your example. ⚡️
 </details>
-
 
 <details>
 <summary>Adding an example in a different repository</summary>
-
 
 If you want to be listed in the [Example Repositories](#example-repositories), follow these steps:
 
@@ -89,11 +79,10 @@ If you want to be listed in the [Example Repositories](#example-repositories), f
 
 2. Regenerate the README.md with the following command
 
-  ```bash
-  npm run docs
-  ```
+```bash
+yarn docs
+```
 
 3. Open a new pull request with your example. ⚡️
-
 
 </details>
