@@ -51,13 +51,11 @@ const config = {
       const rows = []
       examples.forEach((example) => {
         const data = fs.readFileSync(example, 'utf8')
-        const readme = data.toString().split(/\r?\n/)
+        const readme = data.split(/\r?\n/)
         // Find the header line, ignoring leading/trailing pipes and whitespace
-        const tableHeaderIdx = readme.findIndex((l) => {
-          const clean = l
-            .trim()
-            .replace(/^\|/, '')
-            .replace(/\|$/, '')
+        const tableHeaderIdx = readme.findIndex((line) => {
+          const clean = line
+            .replace(/^\s*\|?|\|?\s*$/g, '')
             .trim()
             .toLowerCase()
           return (
@@ -72,17 +70,13 @@ const config = {
         }
         // Find the first valid data row after the header and separator
         let rowIdx = tableHeaderIdx + 1
-        // Skip separator lines and empty lines
-        while (
-          rowIdx < readme.length &&
-          (readme[rowIdx]
-            .trim()
-            .replace(/^\|/, '')
-            .replace(/\|$/, '')
-            .match(/^[-\s|]+$/) ||
-            readme[rowIdx].trim() === '')
-        ) {
-          rowIdx++
+        while (rowIdx < readme.length) {
+          const line = readme[rowIdx].replace(/^\s*\|?|\|?\s*$/g, '').trim()
+          if (line === '' || /^[-\s|:]+$/.test(line)) {
+            rowIdx++
+            continue
+          }
+          break
         }
         // Now rowIdx should be at the first data row
         let row = readme[rowIdx]
@@ -110,7 +104,7 @@ const config = {
           author,
         })
       })
-      // Sort alphabetically by displayName
+      // Sort rows alphabetically by displayName
       rows.sort((a, b) => a.displayName.localeCompare(b.displayName))
       rows.forEach((row) => {
         md += `| **[${row.displayName}](${row.url})** <br/> ${row.description} | ${row.author} |\n`
