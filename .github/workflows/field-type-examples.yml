@@ -1,0 +1,64 @@
+name: Field Type Plugins CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/field-plugins/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/field-plugins/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plugin:
+          - apps/field-plugins/code-block/
+          - apps/field-plugins/palette/
+          - apps/field-plugins/picker-starter/
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js version from .nvmrc
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ${{ matrix.plugin }}.nvmrc
+          cache: "yarn"
+          cache-dependency-path: ${{ matrix.plugin }}yarn.lock
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Run Prettier if script exists
+        run: |
+          if jq -e '.scripts.prettier' package.json > /dev/null; then
+            yarn prettier
+          else
+            echo "No prettier script found, skipping."
+          fi
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Lint
+        run: yarn lint
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Run test:types if script exists
+        run: |
+          if jq -e '.scripts["test:types"]' package.json > /dev/null; then
+            yarn test:types
+          else
+            echo "No test:types script found, skipping."
+          fi
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Test
+        run: yarn test
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Build
+        run: yarn build
+        working-directory: ${{ matrix.plugin }}

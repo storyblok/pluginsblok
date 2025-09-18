@@ -37,6 +37,7 @@ body:
         - "@storyblok/app-extension-auth"
         - "@storyblok/field-plugin"
         - "@storyblok/field-plugin-cli"
+        - "Field Plugins samples"
         - "Multiple packages"
         - "Repository-wide documentation"
     validations:

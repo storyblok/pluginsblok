@@ -5,6 +5,7 @@ packages:
   - packages/field-plugin/packages/cli/templates/*
   - packages/field-plugin/packages/lib-helpers/*
   # plugin starter templates
-  - apps/*
+  # - apps/space-plugins/*
+  # - apps/tool-plugins/*
   # plugin monorepo internal tools
   - tools/*
