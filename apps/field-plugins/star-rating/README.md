@@ -8,6 +8,10 @@
 Star Rating Field Type
 </h1>
 
+| Name        | Description          | Author                                                 |
+| ----------- | -------------------- | ------------------------------------------------------ |
+| Star Rating | Display star ratings | [Demetrius Feijóo](https://github.com/demetriusfeijoo) |
+
 A field-type to display a star rating.
 
 ![screenshot.gif](docs/screenshot.png)

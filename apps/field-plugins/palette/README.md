@@ -8,6 +8,10 @@
 Palette Field Type
 </h1>
 
+| Name    | Description                                  | Author                                                                                                    |
+| ------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Palette | Allow users to select a color from a palette | [Johannes Lindgren](https://github.com/johannes-lindgren) & [Alba Silvente](https://github.com/Dawntraoz) |
+
 A custom field-type for Storyblok that allow users to select a color from a palette.
 
 ![demo.gif](docs/demo.gif)

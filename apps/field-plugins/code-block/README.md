@@ -1,5 +1,9 @@
 # Storyblok Field Plugin in React
 
+| Name       | Description                                                            | Author                                                    |
+| ---------- | ---------------------------------------------------------------------- | --------------------------------------------------------- |
+| Code Block | A lightweight text editor tailored for developers and content creators | [Johannes Lindgren](https://github.com/johannes-lindgren) |
+
 This React project is designed to function as a Storyblok field plugin application. It showcases some fundamental features for field plugins, including value updates, modal toggling, and asset selection. The primary goal of this starter is to provide developers with a clear blueprint for creating custom field plugins.
 
 To remove the example code, simply delete the `src/components/` directory and alter the imports and returned `JSX` in `src/App.tsx`.

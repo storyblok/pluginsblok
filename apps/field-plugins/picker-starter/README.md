@@ -1,5 +1,9 @@
 # Picker Starter
 
+| Name           | Description                                             | Author                                                                                                 |
+| -------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Picker Starter | A starter project for building e-commerce field plugins | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Alba Silvente](https://github.com/Dawntraoz) |
+
 A starter project for building e-commerce [field plugins](https://www.storyblok.com/docs/plugins/field-plugins/introduction) and other “picker” field plugins – for example, integrations with digital asset management (DAM) systems.
 
 ![screenshot](./docs/screenshot.png)

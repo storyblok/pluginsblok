@@ -8,6 +8,10 @@
 Tags Field Type
 </h1>
 
+| Name | Description                                                         | Author                                                                                                                     |
+| ---- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Tags | Allow users to select multiple arbitrary options in a free-form way | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Marcos Henrique Pereira Ramos](https://github.com/marcosh-ramos) |
+
 A custom field-type for Storyblok that allow users to select multiple arbitrary options in a free-form way.
 
 ![screenshot.gif](docs/screenshot.png)

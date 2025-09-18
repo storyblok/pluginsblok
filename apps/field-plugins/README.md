@@ -23,10 +23,16 @@ Each example contains a `README.md` with an explanation about the field-type.
 <!-- AUTO-GENERATED-CONTENT:START (EXAMPLE_TABLE)  -->
 | Example  | Author |
 |:-------|:------:|
-| **[Folder Selection ](https://github.com/storyblok/field-type-examples/tree/main/folder-selection)** <br/>  Select folders from the space using a dropdown  |  [Chakit Arora](https://github.com/arorachakit) |
-| **[Annotated Image ](https://github.com/storyblok/field-type-examples/tree/main/annotated-image)** <br/>  Simple Image Maps for tutorials  |  [Christian Zoppi](https://github.com/christianzoppi) |
-| **[Material Icon Selector ](https://github.com/storyblok/field-type-examples/tree/main/material-icon-selector)** <br/>  Allows users to select any material icon  |  [Riley MacIsaac](https://github.com/rileymacisaac) |
-| **[Star Rating ](https://github.com/storyblok/field-type-examples/tree/main/star-rating)** <br/>  A field-type to display a star rating  |  [Lisi Linhart](https://github.com/lisilinhart/) |
+| **[Annotated Image](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/annotated-image)** <br/> Simple Image Maps for tutorials | [Christian Zoppi](https://github.com/christianzoppi) |
+| **[Code Block](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/code-block)** <br/> A lightweight text editor tailored for developers and content creators | [Johannes Lindgren](https://github.com/johannes-lindgren) |
+| **[Folder Selection](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/folder-selection)** <br/> Select folders from the space using a dropdown | [Chakit Arora](https://github.com/arorachakit) |
+| **[Hosted Plugin](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/hosted-plugin)** <br/> Allows developers to create and deploy plugins independently of the Storyblok interface | [Eunjae Lee](https://github.com/eunjae-lee) |
+| **[Material Icon Selector](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/material-icon-selector)** <br/> Allows users to select any material icon | [Riley MacIsaac](https://github.com/rileymacisaac) |
+| **[Palette](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/palette)** <br/> Allow users to select a color from a palette | [Johannes Lindgren](https://github.com/johannes-lindgren) & [Alba Silvente](https://github.com/Dawntraoz) |
+| **[Picker Starter](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/picker-starter)** <br/> A starter project for building e-commerce field plugins | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Alba Silvente](https://github.com/Dawntraoz) |
+| **[Slider](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/slider)** <br/> Allow users to select a number value from a range | [Johannes Lindgren](https://github.com/johannes-lindgren) |
+| **[Star Rating](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/star-rating)** <br/> Display star ratings | [Demetrius Feijóo](https://github.com/demetriusfeijoo) |
+| **[Tags](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/tags)** <br/> Allow users to select multiple arbitrary options in a free-form way | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Marcos Henrique Pereira Ramos](https://github.com/marcosh-ramos) |
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 

@@ -8,6 +8,10 @@
 Folder Selection Field Plugin
 </h1>
 
+| Name             | Description                                    | Author                                         |
+| ---------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Folder Selection | Select folders from the space using a dropdown | [Chakit Arora](https://github.com/arorachakit) |
+
 A custom field-plugin for Storyblok that allow users to select folders from the space using a dropdown.
 
 ![screenshot.gif](docs/screenshot.png)
