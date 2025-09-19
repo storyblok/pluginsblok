@@ -1,0 +1,42 @@
+name: Space & Tool Plugins CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/space-tool-plugins/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/space-tool-plugins/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plugin:
+          - apps/space-tool-plugins/space-plugins/nuxt-starter/
+          - apps/space-tool-plugins/space-plugins/nextjs-starter/
+          - apps/space-tool-plugins/tool-plugins/nuxt-starter/
+          - apps/space-tool-plugins/tool-plugins/nextjs-starter/
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+          cache: "yarn"
+          cache-dependency-path: ${{ matrix.plugin }}yarn.lock
+
+      - name: Install dependencies
+        run: yarn
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Lint
+        run: yarn lint
+        working-directory: ${{ matrix.plugin }}
+
+      - name: Build Tool Plugin Starter
+        run: yarn build
