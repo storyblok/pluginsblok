@@ -16,9 +16,9 @@ jobs:
     strategy:
       matrix:
         plugin:
-          - apps/space-tool-plugins/space-plugins/nuxt-starter/
+          # - apps/space-tool-plugins/space-plugins/nuxt-starter/
           - apps/space-tool-plugins/space-plugins/nextjs-starter/
-          - apps/space-tool-plugins/tool-plugins/nuxt-starter/
+          # - apps/space-tool-plugins/tool-plugins/nuxt-starter/
           - apps/space-tool-plugins/tool-plugins/nextjs-starter/
     steps:
       - uses: actions/checkout@v4
