@@ -40,3 +40,4 @@ jobs:
 
       - name: Build Tool Plugin Starter
         run: yarn build
+        working-directory: ${{ matrix.plugin }}
