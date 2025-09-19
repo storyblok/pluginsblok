@@ -27,4 +27,12 @@ export default defineNuxtConfig({
 			Roboto: [300, 400, 500, 700],
 		},
 	},
+	vite: {
+		server: {
+			hmr: {
+				protocol: 'wss',
+			},
+			allowedHosts: true,
+		},
+	},
 });

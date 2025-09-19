@@ -13,7 +13,7 @@ const { data: storyContext } = useStoryContext();
 					<LucideTornado class="text-primary" />
 				</template>
 				<template #description>
-					This is a `space-plugin-nuxt-starter`.
+					This is a `tool-plugin-nuxt-starter`.
 				</template>
 				<!-- <template #right-action-bar>
 					<button class="btn btn-outline">
