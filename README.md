@@ -34,11 +34,10 @@ This monorepo contains all official plugin Storyblok libraries, SDK, CLI and sta
 
 ### Starter Templates
 
-| Package                                     | Description                                                    |
-| ------------------------------------------- | -------------------------------------------------------------- |
-| [Field Plugin samples](apps/field-plugins)  | A collection of Custom FieldType plugins by the community.     |
-| [Tool Plugin starters](apps/tool-plugins)   | A collection of starter templates for Storyblok Tool Plugins.  |
-| [Space Plugin starters](apps/space-plugins) | A collection of starter templates for Storyblok Space Plugins. |
+| Package                                                 | Description                                                             |
+| ------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [Field Plugin samples](apps/field-plugins)              | A collection of Custom FieldType plugins by the community.              |
+| [Tool & Space Plugin starters](apps/space-tool-plugins) | A collection of starter templates for Storyblok Tool and Space Plugins. |
 
 ## 🚧 Migration Status
 

@@ -6,11 +6,13 @@ on:
     paths-ignore:
       - "**/*.md"
       - "apps/field-plugins/**"
+      - "apps/space-tool-plugins/**"
   pull_request:
     branches: [main]
     paths-ignore:
       - "**/*.md"
       - "apps/field-plugins/**"
+      - "apps/space-tool-plugins/**"
 
 env:
   HUSKY: 0
