@@ -4,11 +4,11 @@ export default defineNuxtConfig({
 	ssr: false,
 	extends: [
 		[
-			'github:storyblok/space-tool-plugins/space-plugins/nuxt-base',
+			'github:storyblok/pluginsblok/apps/space-tool-plugins/space-plugins/nuxt-base',
 			{ install: true },
 		],
 		[
-			'github:storyblok/space-tool-plugins/space-plugins/nuxt-base-ui',
+			'github:storyblok/pluginsblok/apps/space-tool-plugins/space-plugins/nuxt-base-ui',
 			{ install: true },
 		],
 	],
