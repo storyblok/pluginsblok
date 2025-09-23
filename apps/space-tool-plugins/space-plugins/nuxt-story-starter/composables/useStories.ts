@@ -60,10 +60,10 @@ export const useStories: UseStories = async (props) => {
 	]);
 
 	const numberOfPages = computed(() => {
-		if (data.value !== null) {
-			return getNumberOfPages(data.value.total, data.value.perPage);
+		if (!data.value) {
+			return 0;
 		}
-		return 0;
+		return getNumberOfPages(data.value.total, data.value.perPage);
 	});
 
 	const nextPage = computed(() =>
@@ -90,7 +90,7 @@ export const useStories: UseStories = async (props) => {
 	const selectStories = (id: number | number[]) => {
 		const ids = turnNumberToArray(id);
 
-		if (data.value === null) {
+		if (!data.value) {
 			return;
 		}
 

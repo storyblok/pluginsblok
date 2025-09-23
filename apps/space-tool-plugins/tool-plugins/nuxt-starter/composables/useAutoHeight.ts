@@ -3,7 +3,7 @@ export function useAutoHeight() {
 	let observer: MutationObserver | undefined;
 
 	onMounted(() => {
-		const observer = new MutationObserver(() => {
+		observer = new MutationObserver(() => {
 			const slug = nuxtApp.$appBridge.getSlug();
 			const parentHost = nuxtApp.$appBridge.getParentHost();
 			window.parent.postMessage(

@@ -16,13 +16,14 @@ jobs:
     strategy:
       matrix:
         plugin:
-          # - apps/space-tool-plugins/space-plugins/nuxt-starter/
+          - apps/space-tool-plugins/space-plugins/nuxt-starter/
           - apps/space-tool-plugins/space-plugins/nextjs-starter/
-          # - apps/space-tool-plugins/tool-plugins/nuxt-starter/
+          - apps/space-tool-plugins/tool-plugins/nuxt-starter/
           - apps/space-tool-plugins/tool-plugins/nextjs-starter/
     steps:
       - uses: actions/checkout@v4
-
+      - run: corepack enable
+      - run: corepack prepare yarn@3.6.3 --activate
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -38,6 +39,6 @@ jobs:
         run: yarn lint
         working-directory: ${{ matrix.plugin }}
 
-      - name: Build Tool Plugin Starter
+      - name: Build starter
         run: yarn build
         working-directory: ${{ matrix.plugin }}

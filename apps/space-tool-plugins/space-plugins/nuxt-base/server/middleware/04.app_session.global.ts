@@ -1,5 +1,5 @@
 // By having this separate middleware,
-// we set appSession to event.contenxt for
+// we set appSession to event.context for
 // - plugins that use oauth only
 // - plugins that use appBridge and oauth altogether
 export default defineEventHandler(async (event) => {

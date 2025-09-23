@@ -7,7 +7,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	widows: 100%;
+	width: 100%;
 	height: 100vh;
 }
 </style>

@@ -13,11 +13,11 @@ This repository is developed using [pnpm](https://pnpm.io/). However, you can al
 ```sh
 cd YOUR-PROJECT-NAME
 
-pnpm install && pnpm dev
+pnpm install && pnpm dev # You may remove "packageManager" from `package.json`
 # or
-yarn install && yarn dev
+yarn install && yarn dev # You may need to run `corepack enable` and `corepack prepare yarn@3.6.1`
 # or
-npm install && npm run dev
+npm install && npm run dev # You may remove "packageManager" from `package.json`
 ```
 
 ## Configuration
