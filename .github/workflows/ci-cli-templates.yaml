@@ -1,4 +1,4 @@
-name: CI
+name: CI Field Plugin CLI Templates
 
 on:
   push:
@@ -22,5 +22,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-node
 
-      - name: Check
-        run: pnpm nx run-many --target=build,lint,test,test:types --parallel=3 -p="field-plugin-*-template"
+      - name: Build
+        run: pnpm nx run-many --target=build -p="field-plugin-*-template"
+
+      - name: Test, lint and type check
+        run: pnpm nx run-many --target=lint,test,test:types --parallel=3 -p="field-plugin-*-template"
