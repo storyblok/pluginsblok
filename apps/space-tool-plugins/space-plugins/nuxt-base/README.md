@@ -25,4 +25,4 @@ CLIENT_SECRET=
 BASE_URL=
 ```
 
-To learn more about the configuration, read the [space-plugin-nuxt-starter's README](https://github.com/storyblok/space-tool-plugins/blob/main/space-plugin-nuxt-starter/README.md#configuration).
+To learn more about the configuration, read the [space-plugin-nuxt-starter's README](https://github.com/storyblok/pluginsblok/blob/main/apps/space-tool-plugins/space-plugins/nuxt-starter#configuration).

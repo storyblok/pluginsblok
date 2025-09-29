@@ -11,7 +11,7 @@ https://www.loom.com/share/f56defc5bfcf4fa8bce8682386f8352b?sid=8820f1b2-4229-4b
 ## Getting Started
 
 ```sh
-npx giget@latest gh:storyblok/space-tool-plugins/space-plugins/nuxt-starter YOUR-PROJECT-NAME
+npx giget@latest gh:storyblok/pluginsblok/apps/space-tool-plugins/space-plugins/nuxt-starter YOUR-PROJECT-NAME
 ```
 
 This repository is developed using [pnpm](https://pnpm.io/). However, you can also use Yarn or NPM.
