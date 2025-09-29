@@ -30,6 +30,7 @@ Each example contains a `README.md` with an explanation about the field-type.
 | **[Palette](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/palette)** <br/> Allow users to select a color from a palette | [Johannes Lindgren](https://github.com/johannes-lindgren) & [Alba Silvente](https://github.com/Dawntraoz) |
 | **[Picker Starter](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/picker-starter)** <br/> A starter project for building e-commerce field plugins | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Alba Silvente](https://github.com/Dawntraoz) |
 | **[Slider](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/slider)** <br/> Allow users to select a number value from a range | [Johannes Lindgren](https://github.com/johannes-lindgren) |
+| **[Spotify Search](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/spotify-search)** <br/> A field-type to display a Spotify Search | [Wessel van der Pal](https://github.com/wesssel/) |
 | **[Star Rating](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/star-rating)** <br/> Display star ratings | [Demetrius Feijóo](https://github.com/demetriusfeijoo) |
 | **[Tags](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/tags)** <br/> Allow users to select multiple arbitrary options in a free-form way | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Marcos Henrique Pereira Ramos](https://github.com/marcosh-ramos) |
 
