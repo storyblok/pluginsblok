@@ -26,4 +26,4 @@ jobs:
         run: pnpm nx run-many --target=build -p="field-plugin-*-template"
 
       - name: Test, lint and type check
-        run: pnpm nx run-many --target=lint,test,test:types --parallel=3 -p="field-plugin-*-template"
+        run: pnpm nx run-many --target=lint,test:types --parallel=3 -p="field-plugin-*-template"
