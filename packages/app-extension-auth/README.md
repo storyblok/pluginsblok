@@ -46,7 +46,7 @@ The parameter `AuthHandlerParams['cookieName']` has been renamed to `AuthHandler
 
 See our starters:
 
-- [Next.js](https://github.com/storyblok/space-tool-plugins/tree/main/space-plugins/nextjs-starter)
+- [Next.js](https://github.com/storyblok/pluginsblok/blob/main/apps/space-tool-plugins/space-plugins/nextjs-starter)
 
 ### Install the library
 

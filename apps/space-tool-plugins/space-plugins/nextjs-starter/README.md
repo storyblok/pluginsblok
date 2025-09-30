@@ -7,7 +7,7 @@ This is a starter template for Storyblok Space Plugins, created with Next.js (Pa
 ## Getting Started
 
 ```shell
-npx giget@latest gh:storyblok/space-tool-plugins/space-plugins/nextjs-starter YOUR-PROJECT-NAME
+npx giget@latest gh:storyblok/pluginsblok/apps/space-tool-plugins/space-plugins/nextjs-starter YOUR-PROJECT-NAME
 ```
 
 ## How to run

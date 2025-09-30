@@ -5,7 +5,7 @@ This Nuxt starter is a Storyblok Tool Plugin that includes the basic authenticat
 ## Getting Started
 
 ```sh
-npx giget@latest gh:storyblok/space-tool-plugins/tool-plugins/nuxt-starter YOUR-PROJECT-NAME
+npx giget@latest gh:storyblok/pluginsblok/apps/space-tool-plugins/tool-plugins/nuxt-starter YOUR-PROJECT-NAME
 ```
 
 This repository is developed using [pnpm](https://pnpm.io/). However, you can also use Yarn or NPM.
