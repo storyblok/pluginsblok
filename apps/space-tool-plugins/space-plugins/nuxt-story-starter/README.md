@@ -21,7 +21,7 @@ The Story Starter is a [Space Plugin](https://www.storyblok.com/docs/plugins/cus
 npx giget@latest gh:storyblok/pluginsblok/apps/space-tool-plugins/space-plugins/nuxt-story-starter YOUR-PROJECT-NAME
 ```
 
-To learn more about the configuration, read the [nuxt-starter's README](https://github.com/storyblok/pluginsblok/blob/main/apps/space-tool-plugins/space-plugins/nuxt-story-starter#getting-started).
+To learn more about the configuration, read the [nuxt-starter's README](https://github.com/storyblok/pluginsblok/blob/main/apps/space-tool-plugins/space-plugins/nuxt-starter#configuration).
 
 ## Customization
 
