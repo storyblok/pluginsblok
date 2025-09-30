@@ -30,6 +30,7 @@ Each example contains a `README.md` with an explanation about the field-type.
 | **[Palette](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/palette)** <br/> Allow users to select a color from a palette | [Johannes Lindgren](https://github.com/johannes-lindgren) & [Alba Silvente](https://github.com/Dawntraoz) |
 | **[Picker Starter](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/picker-starter)** <br/> A starter project for building e-commerce field plugins | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Alba Silvente](https://github.com/Dawntraoz) |
 | **[Slider](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/slider)** <br/> Allow users to select a number value from a range | [Johannes Lindgren](https://github.com/johannes-lindgren) |
+| **[Spotify Search](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/spotify-search)** <br/> A field-type to display a Spotify Search | [Wessel van der Pal](https://github.com/wesssel/) |
 | **[Star Rating](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/star-rating)** <br/> Display star ratings | [Demetrius Feijóo](https://github.com/demetriusfeijoo) |
 | **[Tags](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins/tags)** <br/> Allow users to select multiple arbitrary options in a free-form way | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Marcos Henrique Pereira Ramos](https://github.com/marcosh-ramos) |
 
@@ -42,13 +43,14 @@ The following examples live in their own Github repository.
 <!-- AUTO-GENERATED-CONTENT:START (COMMUNITY_EXAMPLES_TABLE)-->
 | Example | Author |
 |:-------|:------:|
+| **[Heroicons Icon Selector ](https://github.com/jpkha/storyblok-fieldtype-heroicons)** <br/> Allows users to select an outline and solid heroicons | [jpkha](http://github.com/jpkha) |
 | **[Hotspot Editor](https://github.com/cartok/storyblok-hotspot-editor)** <br/> A Storyblok field-type to create hotspot images | [cartok](http://github.com/cartok) |
 | **[Storyblok Meta Image](https://github.com/maoberlehner/storyblok-meta-image)** <br/> A Storyblok field-type plugin which provides an image field with meta data | [maoberlehner](http://github.com/maoberlehner) |
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Contributing
 
-**Have an example?** Submit a PR or [open an issue]().We are happy to accept more examples from the community.
+**Have an example?** Submit a PR or [open an issue](https://github.com/storyblok/pluginsblok/issues). We are happy to accept more examples from the community.
 
 <details>
 <summary>Adding an example in this repository</summary>
