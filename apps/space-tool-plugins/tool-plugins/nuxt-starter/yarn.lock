@@ -1963,7 +1963,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storyblok/region-helper@npm:^1.3.0":
+"@storyblok/region-helper@npm:^1.3.0, @storyblok/region-helper@npm:^1.3.1":
   version: 1.3.1
   resolution: "@storyblok/region-helper@npm:1.3.1"
   checksum: 9b11d2ed277c991d89361f798dd7d9f03164b9a035646c83dcc012633641bb95027960c8e4740b9debfce15f399895ae922d321d25a3e54e9defae1ee6a9a09e
@@ -1978,7 +1978,7 @@ __metadata:
     "@nuxtjs/google-fonts": 3.1.0
     "@nuxtjs/tailwindcss": ^6.11.0
     "@storyblok/app-extension-auth": ^2.2.1
-    "@storyblok/region-helper": ^1.3.0
+    "@storyblok/region-helper": ^1.3.1
     autoprefixer: 10.4.16
     daisyui: ^4.4.19
     eslint: ^8.56.0
