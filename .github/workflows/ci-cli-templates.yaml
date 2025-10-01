@@ -1,0 +1,29 @@
+name: CI Field Plugin CLI Templates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/field-plugin/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/field-plugin/**"
+
+env:
+  HUSKY: 0
+  NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+
+jobs:
+  build:
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-node
+
+      - name: Build
+        run: pnpm nx run-many --target=build -p="field-plugin-*-template"
+
+      - name: Test, lint and type check
+        run: pnpm nx run-many --target=lint,test:types --parallel=3 -p="field-plugin-*-template"
