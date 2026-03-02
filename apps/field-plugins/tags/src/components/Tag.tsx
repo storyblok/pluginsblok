@@ -21,7 +21,7 @@ const Tag: FunctionComponent = () => {
   useEffect(() => {
     actions.setContent({
       value: initialValue,
-      plugin: "storyblok-tags",
+      plugin: 'storyblok-tags',
     })
   }, [initialValue])
 
@@ -38,7 +38,6 @@ const Tag: FunctionComponent = () => {
         <TextField
           variant="outlined"
           placeholder={data.options.placeholder}
-          sx={{ background: '#fff' }}
           {...params}
         />
       )}
