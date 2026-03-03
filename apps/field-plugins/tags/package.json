@@ -14,7 +14,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.7",
-    "@storyblok/design-tokens": "0.0.0-beta.3",
+    "@storyblok/design-tokens": "^0.0.0-beta.3",
     "@storyblok/field-plugin": "0.0.1-beta.2",
     "@storyblok/mui": "^0.2.0",
     "react": "^18.2.0",
