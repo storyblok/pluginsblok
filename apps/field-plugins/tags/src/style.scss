@@ -15,10 +15,6 @@ body {
 .MuiFormControl-root {
   background: $sb-color-background-primary;
   color: $sb-color-text-primary;
-  border-radius: 8px;
-  outline: 1px solid $sb-color-border-brand-primary;
-  border: 1px solid $sb-color-border-primary;
-  outline-offset: -1px;
 }
 
 .MuiInputBase-input {
