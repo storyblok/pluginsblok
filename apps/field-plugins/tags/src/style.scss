@@ -33,13 +33,13 @@ body {
 .MuiInputBase-root {
   padding: $sb-size-spacing-xs $sb-size-spacing-base;
   border-radius: $sb-border-width-xl;
-}
 
-.MuiInputBase-input {
-  color: $sb-color-text-primary !important;
-}
+  input.MuiInputBase-input {
+    color: $sb-color-text-primary;
+  }
 
-.MuiOutlinedInput-notchedOutline {
-  box-shadow: none !important;
-  border: none !important;
+  fieldset.MuiOutlinedInput-notchedOutline {
+    box-shadow: none;
+    border: none;
+  }
 }
