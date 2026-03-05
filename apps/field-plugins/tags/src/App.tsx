@@ -1,10 +1,14 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import { FieldPluginProvider } from './FieldPluginProvider'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { lightTheme } from '@storyblok/mui'
 import Tag from './components/Tag'
 
 const App: FunctionComponent = () => {
+  useEffect(() => {
+    const theme = new URLSearchParams(window.location.search).get('theme')
+    document.documentElement.setAttribute('theme', theme ?? 'default')
+  }, [])
   return (
     <FieldPluginProvider
       Loading={Loading}

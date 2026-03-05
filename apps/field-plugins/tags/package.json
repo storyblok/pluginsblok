@@ -14,6 +14,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.7",
+    "@storyblok/design-tokens": "^0.0.0-beta.3",
     "@storyblok/field-plugin": "0.0.1-beta.2",
     "@storyblok/mui": "^0.2.0",
     "react": "^18.2.0",
@@ -28,6 +29,7 @@
     "eslint": "latest",
     "eslint-plugin-react": "7.30.0",
     "prettier": "^3.0.0",
+    "sass": "^1.97.3",
     "typescript": "^4.9.3",
     "vite": "^4.2.2",
     "vite-plugin-css-injected-by-js": "3.1.0"

@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import App from './App'
-import './style.css'
+import './style.scss'
 import { createRootElement } from './createRootElement'
 
 const rootNode = createRootElement()

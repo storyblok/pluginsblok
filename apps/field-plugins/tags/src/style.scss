@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import '@storyblok/design-tokens/tokens/scss/themes/all-themes.scss';
+
+#app {
+  width: 100%;
+  background: transparent;
+  padding: $sb-size-spacing-xs;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.MuiFormControl-root {
+  background: $sb-color-background-primary;
+  color: $sb-color-text-primary;
+  border-radius: $sb-border-width-xl;
+  border: $sb-border-width-sm solid $sb-color-border-primary !important;
+
+  &:hover {
+    border-color: $sb-color-border-brand-primary !important;
+  }
+
+  .Mui-focused & {
+    outline: $sb-border-width-md solid $sb-color-border-brand-primary !important;
+    outline-offset: $sb-size-unit-2xs;
+  }
+}
+
+.MuiInputBase-root {
+  padding: $sb-size-spacing-xs $sb-size-spacing-base;
+  border-radius: $sb-border-width-xl;
+
+  input.MuiInputBase-input {
+    color: $sb-color-text-primary;
+  }
+
+  fieldset.MuiOutlinedInput-notchedOutline {
+    box-shadow: none;
+    border: none;
+  }
+}
