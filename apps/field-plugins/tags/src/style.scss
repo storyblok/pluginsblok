@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import '@storyblok/design-tokens/tokens/scss/themes/all-themes.scss';
+@import '@storyblok/design-tokens/tokens/scss/root-variables.scss';
 
 #app {
   width: 100%;
   background: transparent;
-  padding: 4px;
+  padding: $sb-size-spacing-xs;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 .MuiFormControl-root {
   background: $sb-color-background-primary;
   color: $sb-color-text-primary;
-  border-radius: 8px;
+  border-radius: $sb-border-width-xl;
   border: 1px solid $sb-color-border-primary !important;
 
   &:hover {
@@ -30,8 +31,8 @@ body {
 }
 
 .MuiInputBase-root {
-  padding: 4px 8px;
-  border-radius: 8px;
+  padding: $sb-size-spacing-xs $sb-size-spacing-base;
+  border-radius: $sb-border-width-xl;
 }
 
 .MuiInputBase-input {
