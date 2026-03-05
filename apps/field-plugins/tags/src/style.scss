@@ -26,7 +26,7 @@ body {
 
   .Mui-focused & {
     outline: $sb-border-width-md solid $sb-color-border-brand-primary !important;
-    outline-offset: $sb-border-width-md;
+    outline-offset: $sb-size-unit-2xs;
   }
 }
 
