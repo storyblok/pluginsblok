@@ -18,15 +18,15 @@ body {
   background: $sb-color-background-primary;
   color: $sb-color-text-primary;
   border-radius: $sb-border-width-xl;
-  border: 1px solid $sb-color-border-primary !important;
+  border: $sb-border-width-sm solid $sb-color-border-primary !important;
 
   &:hover {
     border-color: $sb-color-border-brand-primary !important;
   }
 
   .Mui-focused & {
-    outline: 2px solid $sb-color-border-brand-primary !important;
-    outline-offset: 2px;
+    outline: $sb-border-width-md solid $sb-color-border-brand-primary !important;
+    outline-offset: $sb-border-width-md;
   }
 }
 
