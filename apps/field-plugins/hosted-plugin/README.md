@@ -24,4 +24,4 @@ A version of the hosted field plugin, has already been published and is free to 
 
 For detailed information on field plugins within Storyblok, check out the following articles:
 
-- [Introduction to Field Plugins](https://www.storyblok.com/docs/plugins/field-plugins/introduction)
+- [Introduction to Field Plugins](https://www.storyblok.com/docs/plugins/field-plugins)

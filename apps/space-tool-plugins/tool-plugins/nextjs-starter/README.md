@@ -132,8 +132,8 @@ When deploying your Tool Plugin, please remember to adjust the tool settings ins
 
 For more detailed information on Storyblok extensions, read the following guides:
 
-- [Tool Plugins](https://www.storyblok.com/docs/plugins/tool)
-- [OAuth 2.0 Authorization Flow](https://www.storyblok.com/docs/plugins/authentication-apps)
+- [Tool Plugins](https://www.storyblok.com/docs/plugins/tool-plugins)
+- [OAuth 2.0 Authorization Flow](https://www.storyblok.com/docs/plugins/oauth-authorization-flow)
 
 ## Troubleshooting
 

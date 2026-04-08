@@ -2,7 +2,7 @@
 
 # Field-type Examples
 
-A collection of field-types for Storyblok created by the community. Read more about creating field-types [here](https://www.storyblok.com/docs/plugins/field-type)
+A collection of field-types for Storyblok created by the community. Read more about creating field-types [here](https://www.storyblok.com/docs/plugins/field-plugins)
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText=Table of Content) -->
 <details>
