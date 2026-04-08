@@ -238,5 +238,5 @@ app.all('/api/connect/*', authHandler(params))
 
 ## Useful Resources
 
-- [Authentication Oauth2 flow](https://www.storyblok.com/docs/plugins/authentication-apps)
-- [Custom Applications](https://www.storyblok.com/docs/plugins/custom-application)
+- [Authentication Oauth2 flow](https://www.storyblok.com/docs/plugins/oauth-authorization-flow)
+- [Custom Applications](https://www.storyblok.com/docs/plugins/space-plugins)

@@ -129,8 +129,8 @@ When deploying your Space Plugin, please remember to adjust the extension settin
 
 For more detailed information on Storyblok extensions, read the following guides:
 
-- [Space Plugin](https://www.storyblok.com/docs/plugins/custom-application)
-- [OAuth 2.0 Authorization Flow](https://www.storyblok.com/docs/plugins/authentication-apps)
+- [Space Plugin](https://www.storyblok.com/docs/plugins/space-plugins)
+- [OAuth 2.0 Authorization Flow](https://www.storyblok.com/docs/plugins/oauth-authorization-flow)
 
 ## Troubleshooting
 

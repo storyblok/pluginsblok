@@ -4,7 +4,7 @@
 | -------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | Picker Starter | A starter project for building e-commerce field plugins | [Demetrius Feijóo](https://github.com/demetriusfeijoo) & [Alba Silvente](https://github.com/Dawntraoz) |
 
-A starter project for building e-commerce [field plugins](https://www.storyblok.com/docs/plugins/field-plugins/introduction) and other “picker” field plugins – for example, integrations with digital asset management (DAM) systems.
+A starter project for building e-commerce [field plugins](https://www.storyblok.com/docs/plugins/field-plugins) and other “picker” field plugins – for example, integrations with digital asset management (DAM) systems.
 
 ![screenshot](./docs/screenshot.png)
 
@@ -12,7 +12,7 @@ The primary goal of this starter is to provide developers with a clear blueprint
 
 ## `picker.config.ts`
 
-The [`picker.config.ts`](./src/picker.config.ts) is a configuration file where you can customize the title, icon, tabs, filters, methods to perform queries, and also a method to validate the expected [plugin options](https://www.storyblok.com/docs/plugins/field-plugins/introduction#options).
+The [`picker.config.ts`](./src/picker.config.ts) is a configuration file where you can customize the title, icon, tabs, filters, methods to perform queries, and also a method to validate the expected [plugin options](https://www.storyblok.com/docs/plugins/field-plugins#options).
 
 In the example below you can have a glimpse of what this file looks like and its responsibilities:
 
