@@ -175,7 +175,7 @@ To start using this starter locally in your project, just run:
 
 ```sh
 # copy this starter into your cwd
-npx giget@latest gh:storyblok/field-type-examples/picker-starter YOUR-PROJECT-NAME
+npx giget@latest gh:storyblok/pluginsblok/apps/field-plugins/picker-starter YOUR-PROJECT-NAME
 
 # open it
 cd YOUR-PROJECT-NAME
