@@ -43,7 +43,7 @@ yarn deploy
 
 5. Once the deployement is done successfully, you can continue its usage following the "Set up" section right below.
 
-Ps: If you are facing some issue performing these steps, you could also check our updated article on how to create and deploy field-plugins here: [Introduction to field-plugin](https://www.storyblok.com/docs/plugins/introduction).
+Ps: If you are facing some issue performing these steps, you could also check our updated article on how to create and deploy field-plugins here: [Introduction to field-plugin](https://www.storyblok.com/docs/plugins/field-plugins).
 
 # App Description
 

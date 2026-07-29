@@ -18,6 +18,6 @@ Inside each project you will find a detailed README.md file that will provide in
 
 ## Glossary
 
-- `Space Plugins`(also known as [Custom Sidebar Applications](https://www.storyblok.com/docs/plugins/custom-application)) are plugins that are present only once inside a space or organisation. Common Use-Cases for this kind of plugins are bulk operations on the content. One example of a Space Plugin is the [Broken Links Checker](https://www.storyblok.com/apps/storyblok-gmbh@broken-links-checker)
+- `Space Plugins`(also known as [Custom Sidebar Applications](https://www.storyblok.com/docs/plugins/space-plugins)) are plugins that are present only once inside a space or organisation. Common Use-Cases for this kind of plugins are bulk operations on the content. One example of a Space Plugin is the [Broken Links Checker](https://www.storyblok.com/apps/storyblok-gmbh@broken-links-checker)
 
-- `Tool Plugins` (also known as [Tools](https://www.storyblok.com/docs/plugins/tool)) are plugins that can be found within every story inside the tool section. These plugins usually provide operations on the story level. An example would be the [Export Translatable Fields Tool](https://www.storyblok.com/apps/export), which lets the user export all translatable fields of a story to either a JSON or XML format.
+- `Tool Plugins` (also known as [Tools](https://www.storyblok.com/docs/plugins/tool-plugins)) are plugins that can be found within every story inside the tool section. These plugins usually provide operations on the story level. An example would be the [Export Translatable Fields Tool](https://www.storyblok.com/apps/export), which lets the user export all translatable fields of a story to either a JSON or XML format.
