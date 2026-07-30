@@ -7,10 +7,12 @@
     "dev": "vite",
     "build": "vite build && npm run build:post",
     "build:post": "rollup --config rollup.postbuild.config.js",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {
-    "@storyblok/field-plugin": "workspace:*",
+    "@storyblok/field-plugin": "1.7.1",
     "vue": "^2.7.14"
   },
   "devDependencies": {

@@ -5,14 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest run",
-    "test:ui": "vitest --ui",
+    "test": "vitest",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {
-    "@storyblok/field-plugin": "workspace:*",
+    "@storyblok/field-plugin": "1.7.1",
     "vue": "^3.2.47"
   },
   "devDependencies": {

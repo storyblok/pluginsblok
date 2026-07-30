@@ -132,7 +132,7 @@ Uploading your field plugin implementation to Storyblok Partner Portal can be pe
 
 [//]: # 'Add information about deploy and what is specifically does - uploading content of a file to SB, not building'
 
-> :warning: A token to access the [Storyblok Management API](https://www.storyblok.com/docs/api/management/getting-started/authentication) for upserting the field plugin **must** be provided. There are two ways how to pass a token to the CLI.
+> :warning: A token to access the [Storyblok Management API](https://www.storyblok.com/docs/api/management) for upserting the field plugin **must** be provided. There are two ways how to pass a token to the CLI.
 >
 > 1. provide `--token <STORYBLOK_PERSONAL_ACCESS_TOKEN>` inside the `deploy` command
 > 2. inside `.env` or `.env.local` create a new variable `STORYBLOK_PERSONAL_ACCESS_TOKEN`
@@ -195,9 +195,9 @@ We are working on providing templates for the popular frontend frameworks. Curre
 
 Now that everything is set up you can go ahead and checkout Storyblok's resource on field plugins:
 
-🔗 [Field Plugin Documentation](https://www.storyblok.com/docs/plugins/field-plugins)
+🔗 [Field Plugin Documentation](https://www.storyblok.com/docs/plugins/field-plugins/introduction)
 
-🔗 [Field Plugin Examples](https://github.com/storyblok/pluginsblok/tree/main/apps/field-plugins)
+🔗 [Field Plugin Examples](https://github.com/storyblok/field-type-examples)
 
 🔗 [Webinar Feature Focus: Field Plugin](https://www.youtube.com/watch?v=fvTWZCACDVQ)
 

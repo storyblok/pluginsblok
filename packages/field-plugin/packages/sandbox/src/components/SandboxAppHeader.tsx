@@ -21,7 +21,7 @@ export const SandboxAppHeader: FunctionComponent = () => (
     >
       <ListItemButton
         component="a"
-        href="https://www.storyblok.com/docs/plugins/field-plugins"
+        href="https://www.storyblok.com/docs/plugins/field-plugins/introduction"
       >
         Documentation
       </ListItemButton>

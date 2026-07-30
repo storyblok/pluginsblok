@@ -273,7 +273,7 @@ export const printManifestOptions = (options: ManifestOption[] | undefined) => {
     yellow(
       bold(
         `[info] Please note that the option values will not be shared when this field plugin is added to a story. Only keys are configured for security reasons.\n` +
-          `[info] Learn more: https://www.storyblok.com/docs/libraries/js/field-plugin-sdk#manifest-file`,
+          `[info] Learn more: https://www.storyblok.com/docs/plugins/field-plugins/storyblok-field-plugin#manifest-file-for-field-plugins`,
       ),
     ),
   )

@@ -5,15 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest run",
-    "test:ui": "vitest --ui",
+    "test": "vitest",
     "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {
-    "@storyblok/field-plugin": "workspace:*",
+    "@storyblok/field-plugin": "1.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

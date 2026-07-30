@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "add-plugin": "npx @storyblok/field-plugin-cli@latest add --dir \"./packages\" --structure monorepo",
-    "lint": "eslint .",
+    "lint": "eslint --ext .js .",
     "format": "prettier . --write"
   },
   "devDependencies": {

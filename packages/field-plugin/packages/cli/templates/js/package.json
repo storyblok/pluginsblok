@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test:types": "tsc --noEmit",
+    "check:types": "tsc --noEmit",
     "deploy": "npm run build && npx @storyblok/field-plugin-cli@latest deploy"
   },
   "dependencies": {
-    "@storyblok/field-plugin": "workspace:*"
+    "@storyblok/field-plugin": "1.7.1"
   },
   "devDependencies": {
     "vite": "5.4.16",

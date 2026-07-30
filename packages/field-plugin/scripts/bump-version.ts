@@ -204,7 +204,7 @@ await $`git checkout -b ${branchName}`
 
 // Update the version
 await $`cd packages/${packageFolder} && npm version ${nextVersion} --no-git-tag-version --workspaces --no-workspaces-update`
-await $`pnpm install`
+await $`yarn install`
 
 // Create a pull-request
 await $`git add .`
