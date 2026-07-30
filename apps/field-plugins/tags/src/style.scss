@@ -11,6 +11,8 @@ body {
   margin: 0;
   display: flex;
   box-sizing: border-box;
+  // !important: overrides CssBaseline's hardcoded white body background, whose injection order vs. ours flips between dev and build
+  background: transparent !important;
 }
 
 .MuiFormControl-root {

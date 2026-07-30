@@ -6,8 +6,18 @@ import Tag from './components/Tag'
 
 const App: FunctionComponent = () => {
   useEffect(() => {
-    const theme = new URLSearchParams(window.location.search).get('theme')
-    document.documentElement.setAttribute('theme', theme ?? 'default')
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const applyTheme = (isDark: boolean) =>
+      document.documentElement.setAttribute(
+        'theme',
+        isDark ? 'dark' : 'default',
+      )
+    const handleChange = (event: MediaQueryListEvent) =>
+      applyTheme(event.matches)
+
+    applyTheme(darkQuery.matches)
+    darkQuery.addEventListener('change', handleChange)
+    return () => darkQuery.removeEventListener('change', handleChange)
   }, [])
   return (
     <FieldPluginProvider
