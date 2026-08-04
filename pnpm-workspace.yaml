@@ -6,3 +6,8 @@ packages:
   - packages/field-plugin/packages/lib-helpers/*
   # plugin monorepo internal tools
   - tools/*
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true
+  nx: true
