@@ -471,8 +471,8 @@ importers:
   packages/field-plugin/packages/field-plugin:
     dependencies:
       valibot:
-        specifier: 1.1.0
-        version: 1.1.0(typescript@5.8.2)
+        specifier: 1.4.2
+        version: 1.4.2(typescript@5.8.2)
     devDependencies:
       "@storyblok/lib-helpers":
         specifier: workspace:*
@@ -12824,10 +12824,10 @@ packages:
       }
     engines: { node: ">=10.12.0" }
 
-  valibot@1.1.0:
+  valibot@1.4.2:
     resolution:
       {
-        integrity: sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==,
+        integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==,
       }
     peerDependencies:
       typescript: ">=5"
@@ -21894,7 +21894,7 @@ snapshots:
       "@types/istanbul-lib-coverage": 2.0.6
       convert-source-map: 2.0.0
 
-  valibot@1.1.0(typescript@5.8.2):
+  valibot@1.4.2(typescript@5.8.2):
     optionalDependencies:
       typescript: 5.8.2
 
