@@ -1,0 +1,36 @@
+name: Field Plugin CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/field-plugin/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/field-plugin/**"
+
+env:
+  HUSKY: 0
+  NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+
+jobs:
+  check:
+    name: Lint subtree & build templates
+    environment: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-node
+
+      # The field-plugin subtree shares a single eslint config on its (private)
+      # root package, so it isn't covered by the npm:public selection in ci.yaml.
+      # Lint the whole subtree as a unit here.
+      - name: Lint field-plugin subtree
+        run: pnpm nx run field-plugin:lint
+
+      # Starter templates are private, so they're also skipped by ci.yaml.
+      # Build them to catch breakage from library/CLI changes (the glob skips
+      # the non-buildable monorepo template automatically).
+      - name: Build starter templates
+        run: pnpm nx run-many --target=build --parallel=3 -p="field-plugin-*-template"
