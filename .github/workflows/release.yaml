@@ -23,8 +23,12 @@ jobs:
           fetch-depth: 0
           filter: tree:0
           fetch-tags: true
+          persist-credentials: false
 
+      # Cache intentionally disabled — prevents cache poisoning of release pipeline.
       - uses: ./.github/actions/setup-node
+        with:
+          cache: "false"
 
       - name: Run tests, linting and building
         run: pnpm nx run-many --target=test --parallel=3 -p="tag:npm:public"
@@ -53,24 +57,24 @@ jobs:
           fetch-depth: 0
           filter: tree:0
           fetch-tags: true
+          persist-credentials: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # Cache intentionally disabled — prevents cache poisoning of release pipeline.
       - uses: ./.github/actions/setup-node
+        with:
+          cache: "false"
 
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Configure npm authentication
-        run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-
       - name: Determine branch and npm tag
         id: release-info
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
-
           case "$BRANCH_NAME" in
             "main")
               echo "npm_tag=latest" >> $GITHUB_OUTPUT

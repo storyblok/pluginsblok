@@ -18,10 +18,12 @@ jobs:
         with:
           fetch-depth: 0
           filter: tree:0
+          persist-credentials: false
 
+      # Cache intentionally disabled — prevents cache poisoning of publish pipeline.
       - uses: ./.github/actions/setup-node
-
-      - run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+        with:
+          cache: "false"
 
       - name: Build publishable packages
         run: pnpm nx run-many -p="tag:npm:public" -t=build
