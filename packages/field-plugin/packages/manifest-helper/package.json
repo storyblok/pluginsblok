@@ -1,6 +1,7 @@
 {
   "name": "@storyblok/manifest-helper",
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
