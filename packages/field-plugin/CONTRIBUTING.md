@@ -143,29 +143,7 @@ This section will be filled once the helpers are shipped. Work is in progress.
 > **Note**
 > Only internal contributors can release the SDK.
 
-You can release either `@storyblok/field-plugin` or `@storyblok/field-plugin-cli`. To begin the release process, run the following command on the `main` branch:
-
-```sh
-pnpm nx run field-plugin:bump-version
-```
-
-This will prompt you to select which package (`@storyblok/field-plugin` or `@storyblok/field-plugin-cli`) to release and the version number. After entering the required information, a pull request will be created automatically. This pull request will include changes in the `package.json` and possibly the `pnpm-lock.yaml`.
-
-Once this pull request is reviewed and merged, you'll get a commit like [this](https://github.com/storyblok/field-plugin/commit/b4bd948ce3d26f0905352ddbe474ebc9e2f89159).
-
-Then, go to [Releases](https://github.com/storyblok/field-plugin/releases) and draft a new release:
-
-- Create a tag with the format `<PACKAGE-NAME>@<VERSION>`; for example, `@storyblok/field-plugin@0.0.1` and `@storyblok/field-plugin-cli@1.0.0-beta.2`
-- Set the title to the same name.
-- Generate release notes, and ensure that the content is accurate; for example, check that there are no missing bullet points, and check that library changes should not be listed in CLI release notes.
-
-You can find a sample release [here](https://github.com/storyblok/field-plugin/releases/tag/%40storyblok%2Ffield-plugin-cli%400.0.1-beta.2).
-
-Once a release is created, one of the two GitHub Actions—[.github/workflows/npm-publish-library.yml](https://github.com/storyblok/field-plugin/blob/main/.github/workflows/npm-publish-library.yml) or [.github/workflows/npm-publish-cli.yml](https://github.com/storyblok/field-plugin/blob/main/.github/workflows/npm-publish-cli.yml)—will run and deploy the corresponding package to npm.
-
-### Order of releases
-
-Typically, you should release `@storyblok/field-plugin` first. Then, upgrade the version within all the templates and release `@storyblok/field-plugin-cli` afterwards.
+`@storyblok/field-plugin` and `@storyblok/field-plugin-cli` are released from the `pluginsblok` monorepo through the shared Nx release pipeline. See the monorepo [RELEASING.md](../../RELEASING.md) for the current process.
 
 ## Add someone as a contributor
 
