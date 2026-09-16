@@ -119,6 +119,7 @@ describe('deploy', () => {
 const defaultDeployArgs: DeployArgs = {
   skipPrompts: true,
   dir: '.',
+  publish: true,
   name: undefined,
   token: undefined,
   output: undefined,

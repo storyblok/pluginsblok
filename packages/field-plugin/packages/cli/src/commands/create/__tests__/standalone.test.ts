@@ -8,7 +8,7 @@ vi.mock('../../../utils')
 
 describe('standalone', () => {
   it('runs add with correct paramaters', async () => {
-    vi.mocked(add).mockImplementation(() => ({ destPath: 'dest-path' }))
+    vi.mocked(add).mockImplementation(() => Promise.resolve({ destPath: 'dest-path' }))
     await createStandalone({
       dir: 'my-directory',
       packageManager: 'npm',
