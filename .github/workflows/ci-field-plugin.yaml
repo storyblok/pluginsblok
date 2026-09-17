@@ -37,3 +37,52 @@ jobs:
       # exposes it (nx skips the templates that don't).
       - name: Build & type-check starter templates
         run: pnpm nx run-many --target=build,test:types --parallel=3 -p="field-plugin-*-template"
+
+  cli-smoke:
+    name: CLI smoke test (${{ matrix.structure }}/${{ matrix.template }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        template: [js, react, vue2, vue3]
+        structure: [standalone, monorepo]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-node
+
+      # Build the CLI so dist/templates carries the copied templates with the
+      # library version pinned (fix-workspace-versions) — i.e. what users get.
+      - name: Build the CLI
+        run: pnpm nx run @storyblok/field-plugin-cli:build
+
+      # Scaffold a plugin from the built CLI exactly as a user would. The command
+      # is the same for both structures: --repoName is only consumed by the
+      # monorepo path and is harmlessly ignored for standalone. The scaffolded
+      # repo runs git init/commit, so give it an identity.
+      - name: Scaffold ${{ matrix.structure }} ${{ matrix.template }} plugin
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          node packages/field-plugin/packages/cli/bin.js create \
+            --dir "$RUNNER_TEMP" \
+            --template ${{ matrix.template }} \
+            --structure ${{ matrix.structure }} \
+            --packageManager npm \
+            --repoName smoke-repo \
+            --pluginName smoke-plugin
+
+      # Install published deps and build, proving the scaffolded project is valid
+      # (the CLI + template + version-pinning end-to-end path). Standalone builds
+      # the plugin folder directly; monorepo installs at the workspace root
+      # (smoke-repo) and builds the plugin through its npm workspace.
+      - name: Install & build scaffolded plugin
+        run: |
+          if [ "${{ matrix.structure }}" = "monorepo" ]; then
+            cd "$RUNNER_TEMP/smoke-repo"
+            npm install
+            npm run build --workspace=smoke-plugin
+          else
+            cd "$RUNNER_TEMP/smoke-plugin"
+            npm install
+            npm run build
+          fi
