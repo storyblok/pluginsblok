@@ -1,3 +1,6 @@
+# Field-plugin-specific CI. Covers what ci.yaml's `tag:npm:public` selection
+# can't: the subtree's shared-config lint, private starter-template builds,
+# and the CLI scaffolding smoke test.
 name: Field Plugin CI
 
 on:
