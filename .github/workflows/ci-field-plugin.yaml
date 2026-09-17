@@ -11,12 +11,11 @@ on:
       - "packages/field-plugin/**"
 
 env:
-  HUSKY: 0
   NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
 
 jobs:
   check:
-    name: Lint subtree & build templates
+    name: Lint & build templates
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +24,7 @@ jobs:
       # The field-plugin subtree shares a single eslint config on its (private)
       # root package, so it isn't covered by the npm:public selection in ci.yaml.
       # Lint the whole subtree as a unit here.
-      - name: Lint field-plugin subtree
+      - name: Lint
         run: pnpm nx run field-plugin:lint
 
       # Starter templates are private, so they're also skipped by ci.yaml.
