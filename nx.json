@@ -16,6 +16,11 @@
       "inputs": ["default"],
       "cache": true
     },
+    "test:types": {
+      "dependsOn": ["^build"],
+      "inputs": ["default"],
+      "cache": true
+    },
     "lint": {
       "inputs": ["default"],
       "cache": true
