@@ -19,7 +19,7 @@ env:
 jobs:
   check:
     name: Lint & build templates
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-node
