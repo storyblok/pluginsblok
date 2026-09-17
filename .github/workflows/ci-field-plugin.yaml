@@ -30,6 +30,12 @@ jobs:
       - name: Lint
         run: pnpm nx run field-plugin:lint
 
+      # Prettier is disabled as an eslint rule here (eslint-config-prettier), so
+      # the lint step above doesn't check formatting. Restore the library format
+      # check the old repo had (lib scope only — matches the old ci-library.yml).
+      - name: Check formatting
+        run: pnpm nx run field-plugin:format:check
+
       # Starter templates are private, so they're also skipped by ci.yaml.
       # Build them to catch breakage from library/CLI changes (the glob skips
       # the non-buildable monorepo template automatically). test:types is added
@@ -37,6 +43,11 @@ jobs:
       # exposes it (nx skips the templates that don't).
       - name: Build & type-check starter templates
         run: pnpm nx run-many --target=build,test:types --parallel=3 -p="field-plugin-*-template"
+
+      # manifest-helper is a build input to the library but is private, so its
+      # vitest suite isn't covered by ci.yaml's npm:public test run. Run it here.
+      - name: Test manifest-helper
+        run: pnpm nx run @storyblok/manifest-helper:test
 
   cli-smoke:
     name: CLI smoke test (${{ matrix.structure }}/${{ matrix.template }})

@@ -13,7 +13,8 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format:check": "prettier --check packages/field-plugin"
   },
   "devDependencies": {
     "@eslint/js": "9.23.0",
