@@ -29,6 +29,8 @@ jobs:
 
       # Starter templates are private, so they're also skipped by ci.yaml.
       # Build them to catch breakage from library/CLI changes (the glob skips
-      # the non-buildable monorepo template automatically).
-      - name: Build starter templates
-        run: pnpm nx run-many --target=build --parallel=3 -p="field-plugin-*-template"
+      # the non-buildable monorepo template automatically). test:types is added
+      # because the subtree lint doesn't type-check, and only the js template
+      # exposes it (nx skips the templates that don't).
+      - name: Build & type-check starter templates
+        run: pnpm nx run-many --target=build,test:types --parallel=3 -p="field-plugin-*-template"
