@@ -1,0 +1,39 @@
+# Field-plugin-specific CI. Covers what ci.yaml's `tag:npm:public` selection
+# can't: the subtree's shared-config lint, private starter-template builds,
+# and the CLI scaffolding smoke test.
+name: Field Plugin CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/field-plugin/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "packages/field-plugin/**"
+
+env:
+  NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+
+jobs:
+  check:
+    name: Lint & build templates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-node
+
+      # The field-plugin subtree shares a single eslint config on its (private)
+      # root package, so it isn't covered by the npm:public selection in ci.yaml.
+      # Lint the whole subtree as a unit here.
+      - name: Lint
+        run: pnpm nx run field-plugin:lint
+
+      # Starter templates are private, so they're also skipped by ci.yaml.
+      # Build them to catch breakage from library/CLI changes (the glob skips
+      # the non-buildable monorepo template automatically). test:types is added
+      # because the subtree lint doesn't type-check, and only the js template
+      # exposes it (nx skips the templates that don't).
+      - name: Build & type-check starter templates
+        run: pnpm nx run-many --target=build,test:types --parallel=3 -p="field-plugin-*-template"
