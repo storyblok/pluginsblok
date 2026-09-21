@@ -120,28 +120,13 @@ The repository uses different branches for different types of releases:
 
 Each branch corresponds to a specific npm distribution tag, ensuring users can install the appropriate version for their needs.
 
-## Field Plugin (`@storyblok/field-plugin` + `@storyblok/field-plugin-cli`)
+## Field Plugin: SDK ↔ CLI coupling
 
-The field-plugin SDK and CLI live in the nested subtree under `packages/field-plugin/` and release through the same `nx release` + Publish flow described above. A few subtree-specific notes:
+The field-plugin SDK and CLI release through the same `nx release` + Publish flow as any other package. The one thing to know that differs:
 
-### Publishable packages
+Only `@storyblok/field-plugin` (SDK) and `@storyblok/field-plugin-cli` publish; the subtree's `@storyblok/*` helpers are private build-inputs bundled into the SDK's `dist` subpath exports (e.g. `@storyblok/field-plugin/vite`), not released on their own.
 
-Only `@storyblok/field-plugin` (the SDK/library) and `@storyblok/field-plugin-cli` are published. Everything else in the subtree — the starter templates, `demo`, `sandbox`, and the `@storyblok/lib-helpers` / `@storyblok/manifest-helper` build inputs — is `private`, so Nx excludes it from versioning and publishing. The helpers' code still ships: it is bundled into the SDK's `dist` subpath exports (e.g. `@storyblok/field-plugin/vite`, `/react`, `/vue3`).
-
-### Commit → project mapping
-
-Nx assigns each conventional commit to a project by the **files it changes**, not by the commit's scope text. A commit under `packages/field-plugin/packages/field-plugin/**` bumps the SDK; one under `.../cli/**` bumps the CLI. (The old repo's `lib` / `cli` commit scopes no longer drive versioning.)
-
-### SDK and CLI are versioned independently
-
-The CLI bundles the starter templates into its `dist`, and at CLI build time `packages/cli/scripts/fix-workspace-versions.mjs` pins the current `@storyblok/field-plugin` version into those templates. Because the two are released independently:
-
-- Releasing **only the SDK** does **not** re-publish the CLI. Plugins scaffolded from the current CLI keep pinning the SDK version from the CLI's **last** build until the CLI is itself released again.
-- So after a notable SDK release, release the **CLI** as well (a `fix`/`feat` commit under `.../cli`, or a manual version bump) so its bundled templates re-pin the new SDK version.
-
-### CI does not run template unit tests
-
-The starter-template unit tests are intentionally excluded from CI while the Vue 2 template is still supported (a "Vue 3 tested as a Vue 2 app" tooling conflict in the monorepo). Templates are still **built** and **type-checked**, and the CLI smoke test scaffolds and builds each template end-to-end. Re-enable template unit tests once the Vue 2 template is deprecated.
+The CLI bundles the starter templates with the SDK version pinned at CLI build time. Because the two release independently, an SDK-only release does **not** refresh those templates — plugins scaffolded from the current CLI keep the SDK version from its last build until the CLI is itself released again. After a notable SDK release, release the CLI too so its templates re-pin the new SDK version.
 
 ## Best Practices
 
