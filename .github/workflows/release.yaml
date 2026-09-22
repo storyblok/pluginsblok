@@ -2,6 +2,19 @@ name: Release
 
 on:
   workflow_dispatch:
+    inputs:
+      specifier:
+        description: "Version specifier (patch, minor, major, preminor, prerelease…). Empty = conventional commits."
+        required: false
+        default: ""
+      preid:
+        description: "Prerelease identifier for a pre* specifier (beta, alpha, rc, next)."
+        required: false
+        default: ""
+      projects:
+        description: "Comma-separated projects to scope to (e.g. @storyblok/field-plugin,@storyblok/field-plugin-cli). Empty = all."
+        required: false
+        default: ""
 
 env:
   HUSKY: 0
@@ -30,7 +43,7 @@ jobs:
         run: pnpm nx run-many --target=test --parallel=3 -p="tag:npm:public"
 
       - name: Dry run
-        run: pnpm nx release --dry-run --verbose
+        run: pnpm nx release ${{ inputs.specifier }} ${{ inputs.preid && format('--preid {0}', inputs.preid) || '' }} ${{ inputs.projects && format('--projects={0}', inputs.projects) || '' }} --dry-run --verbose
 
       - name: Print Environment Info
         run: pnpm nx report
@@ -69,14 +82,14 @@ jobs:
         id: release-info
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
 
           case "$BRANCH_NAME" in
             "main")
-              echo "npm_tag=latest" >> $GITHUB_OUTPUT
+              echo "npm_tag=latest" >> "$GITHUB_OUTPUT"
               ;;
             *)
-              echo "npm_tag=$BRANCH_NAME" >> $GITHUB_OUTPUT
+              echo "npm_tag=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
               ;;
           esac
 
@@ -84,7 +97,7 @@ jobs:
         run: pnpm nx run-many --target=build --parallel=3 -p="tag:npm:public"
 
       - name: Version and create release
-        run: pnpm nx release --skip-publish --verbose
+        run: pnpm nx release ${{ inputs.specifier }} ${{ inputs.preid && format('--preid {0}', inputs.preid) || '' }} ${{ inputs.projects && format('--projects={0}', inputs.projects) || '' }} --skip-publish --verbose
 
       - name: Publish packages to npm
-        run: pnpm nx release publish --excludeTaskDependencies --tag=${{ steps.release-info.outputs.npm_tag }} --verbose
+        run: pnpm nx release publish ${{ inputs.projects && format('--projects={0}', inputs.projects) || '' }} --excludeTaskDependencies --tag=${{ steps.release-info.outputs.npm_tag }} --verbose

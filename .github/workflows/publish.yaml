@@ -2,6 +2,11 @@ name: Publish
 
 on:
   workflow_dispatch:
+    inputs:
+      projects:
+        description: "Comma-separated projects to publish (e.g. @storyblok/field-plugin,@storyblok/field-plugin-cli). Empty = all publishable."
+        required: false
+        default: ""
 
 jobs:
   test:
@@ -35,11 +40,11 @@ jobs:
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           if [ "$BRANCH_NAME" = "main" ]; then
-            echo "tag=latest" >> $GITHUB_OUTPUT
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
           else
-            echo "tag=$BRANCH_NAME" >> $GITHUB_OUTPUT
+            echo "tag=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Publish packages
-        run: pnpm nx release publish --excludeTaskDependencies --tag=${{ steps.npm-tag.outputs.tag }}
+        run: pnpm nx release publish ${{ inputs.projects && format('--projects={0}', inputs.projects) || '' }} --excludeTaskDependencies --tag=${{ steps.npm-tag.outputs.tag }}
         shell: bash
