@@ -52,7 +52,6 @@ jobs:
     environment: production
     permissions:
       contents: write # Required for creating tags and commits
-      id-token: write # Required for npm provenance
       pull-requests: write # Required for GitHub releases
     timeout-minutes: 20
     steps:
@@ -71,29 +70,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Configure npm authentication
-        run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-
-      - name: Determine branch and npm tag
-        id: release-info
-        run: |
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
-
-          case "$BRANCH_NAME" in
-            "main")
-              echo "npm_tag=latest" >> "$GITHUB_OUTPUT"
-              ;;
-            *)
-              echo "npm_tag=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
-              ;;
-          esac
-
       - name: Build all packages
         run: pnpm nx run-many --target=build --parallel=3 -p="tag:npm:public"
 
       - name: Version and create release
         run: pnpm nx release ${{ inputs.preid && format('--preid {0}', inputs.preid) || '' }} ${{ inputs.projects && format('--projects={0}', inputs.projects) || '' }} --skip-publish --verbose
-
-      - name: Publish packages to npm
-        run: pnpm nx release publish ${{ inputs.projects && format('--projects={0}', inputs.projects) || '' }} --excludeTaskDependencies --tag=${{ steps.release-info.outputs.npm_tag }} --verbose
