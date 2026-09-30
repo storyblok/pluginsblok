@@ -77,5 +77,8 @@
   "keywords": [
     "storyblok",
     "big commerce"
-  ]
+  ],
+  "resolutions": {
+    "@vue/cli-service/html-webpack-plugin/loader-utils": "^1.4.2"
+  }
 }
