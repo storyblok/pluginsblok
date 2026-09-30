@@ -11,7 +11,7 @@
     ],
     "dependencies": {
         "gray-matter": "^4.0.2",
-        "markdown-magic": "^0.1.25"
+        "markdown-magic": "^2.6.1"
     },
     "devDependencies": {
         "eslint": "^7.17.0",
