@@ -7,9 +7,7 @@ packages:
   # plugin monorepo internal tools
   - tools/*
 allowBuilds:
-  "@parcel/watcher": true
+  '@parcel/watcher': true
   core-js: true
   esbuild: true
   nx: true
-overrides:
-  "lodash@<4.18.1": ^4.18.1
