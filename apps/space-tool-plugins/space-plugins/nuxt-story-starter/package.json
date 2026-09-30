@@ -35,8 +35,5 @@
 		"nuxt-lucide-icons": "1.0.5",
 		"vue": "^3.4.14",
 		"vue-router": "^4.2.5"
-	},
-	"resolutions": {
-		"@rollup/plugin-terser@^0.4.4": "^1.0.0"
 	}
 }
