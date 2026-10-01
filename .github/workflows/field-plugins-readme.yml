@@ -1,0 +1,34 @@
+name: Field Plugins README
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/field-plugins/**"
+      - ".github/workflows/field-plugins-readme.yml"
+
+jobs:
+  readme:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - run: corepack prepare yarn@3.6.3 --activate
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: "yarn"
+          cache-dependency-path: apps/field-plugins/yarn.lock
+
+      - name: Install dependencies
+        run: yarn install --immutable
+        working-directory: apps/field-plugins
+
+      - name: Generate README
+        run: yarn docs
+        working-directory: apps/field-plugins
+
+      - name: Check README is up to date
+        run: git diff --exit-code README.md
+        working-directory: apps/field-plugins
