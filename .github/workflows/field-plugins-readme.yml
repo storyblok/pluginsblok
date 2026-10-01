@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "apps/field-plugins/**"
+      - ".github/workflows/field-plugins-readme.yml"
 
 jobs:
   readme:

@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "apps/space-tool-plugins/**"
+      - ".github/workflows/ci-space-tool-templates.yml"
   pull_request:
     branches: [main]
     paths:
       - "apps/space-tool-plugins/**"
+      - ".github/workflows/ci-space-tool-templates.yml"
 
 jobs:
   build:
