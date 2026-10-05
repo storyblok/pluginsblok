@@ -14,6 +14,7 @@ import {
 	KEY_TOKEN,
 	KEY_VALIDATED_PAYLOAD,
 } from '@/utils/const';
+import { isSafeRedirectUrl } from '@/utils/isSafeRedirectUrl';
 import { useState, useEffect } from 'react';
 
 const getPostMessageAction = (type: PluginType): PostMessageAction => {
@@ -210,8 +211,10 @@ const useOAuth = ({ type }: { type: PluginType }) => {
 
 		if (initOAuth) {
 			sendBeginOAuthMessageToParent(response.redirectTo);
-		} else {
+		} else if (isSafeRedirectUrl(response.redirectTo)) {
 			window.location.href = response.redirectTo;
+		} else {
+			console.error('Blocked OAuth redirect to an unsafe URL');
 		}
 	};
 
