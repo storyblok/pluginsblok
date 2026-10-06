@@ -6,7 +6,11 @@ export const isSafeRedirectUrl = (url: unknown): url is string => {
 	}
 
 	try {
-		const { protocol, hostname } = new URL(url, location.origin);
+		if (url.startsWith('/')) {
+			return new URL(url, location.origin).origin === location.origin;
+		}
+
+		const { protocol, hostname } = new URL(url);
 
 		if (protocol === 'https:') {
 			return true;
