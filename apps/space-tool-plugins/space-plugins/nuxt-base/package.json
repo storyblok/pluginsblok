@@ -16,7 +16,7 @@
 		"jsonwebtoken": "^9.0.2"
 	},
 	"devDependencies": {
-		"@nuxt/devtools": "latest",
+		"@nuxt/devtools": "^1.7.0",
 		"@types/jsonwebtoken": "^9.0.6",
 		"execa": "^8.0.1",
 		"h3": "^1.8.2",
