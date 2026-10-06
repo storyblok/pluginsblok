@@ -248,7 +248,7 @@ describe('AppSession', () => {
         expect(
           isAppSession({
             ...stub,
-            accessToken: 'duifh89we4',
+            accessToken: 'test-access-token',
           }),
         ).toEqual(true)
         expect(
