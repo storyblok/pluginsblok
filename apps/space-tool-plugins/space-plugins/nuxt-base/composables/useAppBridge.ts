@@ -190,8 +190,10 @@ const useOAuth = () => {
 
 		if (initOAuth) {
 			sendBeginOAuthMessageToParent(response.redirectTo);
-		} else {
+		} else if (isSafeRedirectUrl(response.redirectTo)) {
 			window.location.href = response.redirectTo;
+		} else {
+			console.error('Blocked OAuth redirect to an unsafe URL');
 		}
 	};
 
