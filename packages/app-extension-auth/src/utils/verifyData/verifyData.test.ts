@@ -2,8 +2,7 @@ import { verifyData } from './verifyData'
 import jwt from 'jsonwebtoken'
 import { signData } from '../signData'
 
-const testSecret =
-  'fkxAHP5whEOjjJh4SFvYvQ9BiqBc8DMqQiX4MMFOcSUx5Qh5xxOI2wqQMRfK53aTOyc5RyEimYQBsA7lWu9kag=='
+const testSecret = 'test-secret-not-a-real-credential'
 const testCookieValue = {
   propA: 123,
   propB: 'abc',

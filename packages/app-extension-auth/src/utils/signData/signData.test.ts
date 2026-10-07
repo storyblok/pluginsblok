@@ -1,8 +1,7 @@
 import { signData } from './signData'
 import { verifyData } from '../verifyData'
 
-const testSecret =
-  'fkxAHP5whEOjjJh4SFvYvQ9BiqBc8DMqQiX4MMFOcSUx5Qh5xxOI2wqQMRfK53aTOyc5RyEimYQBsA7lWu9kag=='
+const testSecret = 'test-secret-not-a-real-credential'
 const testCookieValue = {
   propA: 123,
   propB: 'abc',
