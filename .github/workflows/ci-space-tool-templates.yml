@@ -36,7 +36,6 @@ jobs:
         working-directory: ${{ matrix.plugin }}
 
       - name: Lint
-        if: ${{ !contains(matrix.plugin, 'nextjs-starter') }}
         run: yarn lint
         working-directory: ${{ matrix.plugin }}
 
