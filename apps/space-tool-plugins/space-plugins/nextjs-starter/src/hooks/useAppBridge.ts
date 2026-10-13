@@ -212,7 +212,7 @@ const useOAuth = ({ type }: { type: PluginType }) => {
 		if (initOAuth) {
 			sendBeginOAuthMessageToParent(response.redirectTo);
 		} else if (isSafeRedirectUrl(response.redirectTo)) {
-			window.location.href = response.redirectTo;
+			window.location.assign(response.redirectTo);
 		} else {
 			console.error('Blocked OAuth redirect to an unsafe URL');
 		}
