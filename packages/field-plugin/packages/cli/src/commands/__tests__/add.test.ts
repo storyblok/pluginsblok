@@ -17,6 +17,14 @@ vi.mock('../../utils', async () => {
 })
 
 describe('add', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
   it('adds a standalone template', async () => {
     const folderName = randomString()
     const name = randomString()
@@ -113,6 +121,5 @@ describe('add', () => {
     expect(exit).toHaveBeenCalledWith(1)
     expect(selectPackageManager).not.toHaveBeenCalled()
     expect(existsSync(`${tempDir}/evil`)).toBe(false)
-    exit.mockRestore()
   })
 })

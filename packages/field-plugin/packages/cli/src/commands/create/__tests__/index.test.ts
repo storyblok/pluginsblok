@@ -25,6 +25,10 @@ describe('create', () => {
     vi.resetAllMocks()
   })
 
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
   it('asks for package manager if not given', async () => {
     vi.mocked(isValidPackageManager).mockImplementation(
       utils.isValidPackageManager,
@@ -76,6 +80,5 @@ describe('create', () => {
     expect(selectPackageManager).not.toHaveBeenCalled()
     expect(createMonorepo).not.toHaveBeenCalled()
     expect(createStandalone).not.toHaveBeenCalled()
-    exit.mockRestore()
   })
 })
