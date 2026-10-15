@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "apps/space-tool-plugins/**"
+      - ".github/workflows/ci-space-tool-templates.yml"
   pull_request:
     branches: [main]
     paths:
       - "apps/space-tool-plugins/**"
+      - ".github/workflows/ci-space-tool-templates.yml"
 
 jobs:
   build:
@@ -18,6 +20,8 @@ jobs:
         plugin:
           - apps/space-tool-plugins/space-plugins/nuxt-starter/
           - apps/space-tool-plugins/space-plugins/nextjs-starter/
+          - apps/space-tool-plugins/space-plugins/nuxt-base/
+          - apps/space-tool-plugins/space-plugins/nuxt-story-starter/
           - apps/space-tool-plugins/tool-plugins/nuxt-starter/
           - apps/space-tool-plugins/tool-plugins/nextjs-starter/
     steps:
@@ -32,11 +36,16 @@ jobs:
           cache-dependency-path: ${{ matrix.plugin }}yarn.lock
 
       - name: Install dependencies
-        run: yarn
+        run: yarn install --immutable
         working-directory: ${{ matrix.plugin }}
 
-      - name: Lint
-        run: yarn lint
+      - name: Lint if script exists
+        run: |
+          if jq -e '.scripts.lint' package.json > /dev/null; then
+            yarn lint
+          else
+            echo "No lint script found, skipping."
+          fi
         working-directory: ${{ matrix.plugin }}
 
       - name: Build starter
