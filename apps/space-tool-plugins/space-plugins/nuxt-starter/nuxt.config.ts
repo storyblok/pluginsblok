@@ -31,6 +31,7 @@ export default defineNuxtConfig({
 		server: {
 			hmr: {
 				protocol: 'wss',
+				port: 3000,
 			},
 			allowedHosts: true,
 		},
