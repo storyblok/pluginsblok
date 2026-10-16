@@ -4,10 +4,10 @@
         <div class="map-node__number" @mousedown=startDragging>{{ number + 1 }}</div>
         <SbButton
           v-if="size !== 'small'"
-          icon="delete"
+          icon="trash-2"
           is-rounded
           has-icon-only
-          variant="ghost"
+          variant="tertiary"
           @click=removeNode
           class="map-node__close"
         />
@@ -16,16 +16,16 @@
           icon="edit"
           is-rounded
           has-icon-only
-          variant="ghost"
+          variant="tertiary"
           @click=toggleEditing
           class="map-node__edit-direction"
         />
         <SbButton
           v-if="size !== 'small'"
-          icon="close"
+          icon="x"
           is-rounded
           has-icon-only
-          variant="ghost"
+          variant="tertiary"
           @click=toggleEditing
           class="map-node__clear-direction"
         />
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import SbButton from 'storyblok-design-system/src/components/Button'
+import { SbButton } from '@storyblok/design-system'
 
 export default {
   components: {
@@ -48,6 +48,7 @@ export default {
     }
   },
   props: ['node', 'number', 'size', 'dragging'],
+  emits: ['removeNode', 'setDirection', 'selectedNode'],
   methods: {
     nodePosition() {
       return `top: ${this.node.y * 100}%; left: ${this.node.x * 100}%`
