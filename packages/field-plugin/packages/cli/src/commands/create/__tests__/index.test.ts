@@ -1,6 +1,9 @@
 import { vi } from 'vitest'
 import { create } from '../'
+import { createMonorepo } from '../monorepo'
+import { createStandalone } from '../standalone'
 import {
+  exitIfInvalidNameOption,
   isValidPackageManager,
   selectPackageManager,
   selectRepositoryStructure,
@@ -20,6 +23,10 @@ describe('create', () => {
 
   beforeEach(() => {
     vi.resetAllMocks()
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
   })
 
   it('asks for package manager if not given', async () => {
@@ -52,5 +59,26 @@ describe('create', () => {
     // @ts-expect-error testing wrong arguments
     await create({ packageManager: 'npm', structure: 'standalone' })
     expect(selectRepositoryStructure).toHaveBeenCalledTimes(0)
+  })
+
+  it.each([
+    { repoName: '../evil' },
+    { pluginName: '../evil' },
+    { pluginName: '@acme/plugin' },
+  ])('exits before prompting or writing for %j', async (names) => {
+    vi.mocked(exitIfInvalidNameOption).mockImplementation(
+      utils.exitIfInvalidNameOption,
+    )
+    const exit = vi.spyOn(process, 'exit').mockImplementation(() => {
+      throw new Error('process.exit')
+    })
+    await expect(
+      // @ts-expect-error testing wrong arguments
+      create({ dir: '.', structure: 'monorepo', ...names }),
+    ).rejects.toThrow('process.exit')
+    expect(exit).toHaveBeenCalledWith(1)
+    expect(selectPackageManager).not.toHaveBeenCalled()
+    expect(createMonorepo).not.toHaveBeenCalled()
+    expect(createStandalone).not.toHaveBeenCalled()
   })
 })

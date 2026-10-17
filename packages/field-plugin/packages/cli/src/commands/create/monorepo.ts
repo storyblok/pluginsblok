@@ -13,6 +13,7 @@ import {
   betterPrompts,
   filterPathsToInclude,
   initializeNewRepo,
+  isValidPackageName,
 } from '../../utils'
 import { add } from '../add'
 import walk from 'walkdir'
@@ -26,11 +27,7 @@ const isValidRepoName = ({
   name: string | undefined
   dir: string
 }) => {
-  return (
-    typeof name === 'string' &&
-    new RegExp(/^[a-z0-9\\-]+$/).test(name) &&
-    !existsSync(resolve(dir, name))
-  )
+  return isValidPackageName(name) && !existsSync(resolve(dir, name))
 }
 
 const promptRepoName = async (dir: string) => {

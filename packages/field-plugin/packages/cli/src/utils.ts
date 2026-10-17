@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import prompts from 'prompts'
 import { isAbsolute, relative, resolve } from 'path'
 import { existsSync, appendFileSync } from 'fs'
-import { bold, cyan } from 'kleur/colors'
+import { bold, cyan, red } from 'kleur/colors'
 import { TEMPLATES } from '../config'
 import type { PackageManager, Structure } from './commands/types'
 
@@ -99,8 +99,26 @@ export const getPersonalAccessToken: GetPersonalAccessTokenFunc = async ({
   return { token: inputToken }
 }
 
+// Also guarantees the name is safe to use as a single path segment
+// (no `.`, `/` or `\`), since it becomes the plugin's folder name.
 export const isValidPackageName = (name: string | undefined): name is string =>
-  name !== undefined && new RegExp(/^[a-z0-9\\-]+$/).test(name)
+  name !== undefined && /^[a-z0-9-]+$/.test(name)
+
+// Validates a name passed as a CLI option. Runs before any prompt or file
+// write, so a bad flag fails immediately instead of after interaction.
+export const exitIfInvalidNameOption = (
+  name: string | undefined,
+  option: string,
+) => {
+  if (name === undefined || name === '' || isValidPackageName(name)) {
+    return
+  }
+  console.log(
+    bold(red('[ERROR]')),
+    `Invalid value '${name}' for ${option}. Only lowercase alphanumeric characters and dash are allowed.`,
+  )
+  process.exit(1)
+}
 
 export const promptName = async ({
   message,
