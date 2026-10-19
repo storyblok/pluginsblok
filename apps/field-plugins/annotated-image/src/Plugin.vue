@@ -85,7 +85,10 @@ export default {
     },
     async selectImage() {
       const asset = await this.plugin.actions.selectAsset()
-      this.setContent({ image: asset.filename })
+      if (asset.filename === this.model.image) {
+        return
+      }
+      this.setContent({ image: asset.filename, mapNodes: [] })
     },
     openModal(){
       this.mapNodes = JSON.parse(JSON.stringify(this.model.mapNodes))
@@ -129,7 +132,7 @@ export default {
       return index === this.dragging_index
     },
     removeImage() {
-      this.setContent({ image: '' })
+      this.setContent({ image: '', mapNodes: [] })
     },
     setNodeDirection(data) {
       this.mapNodes[data.index].direction = data.direction
