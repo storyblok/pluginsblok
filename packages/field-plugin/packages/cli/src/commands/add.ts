@@ -15,6 +15,7 @@ import {
   getInstallCommand,
   getMonorepoCommandByPackageManager,
   getStandaloneCommandByPackageManager,
+  exitIfInvalidNameOption,
   isValidPackageManager,
   promptName,
   runCommand,
@@ -41,6 +42,8 @@ export type PackageJson = {
 export type AddFunc = (args: AddArgs) => Promise<{ destPath: string }>
 
 export const add: AddFunc = async (args) => {
+  exitIfInvalidNameOption(args.name, '--name')
+
   const packageManager = isValidPackageManager(args.packageManager)
     ? args.packageManager
     : await selectPackageManager()

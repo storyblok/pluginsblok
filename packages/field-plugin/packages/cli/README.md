@@ -108,6 +108,7 @@ The options for the `add` command are the following:
 --packageManager <value> package manager (choices: "npm", "yarn", "pnpm")
 --name <value>      name of plugin (Lowercase alphanumeric and dash)
 --dir <value>       directory to create a field plugin into (default: `.`)
+--structure <value> setup structure (choices: "standalone", "monorepo")
 -h, --help          display help for command
 ```
 
@@ -142,8 +143,12 @@ For additional customizations you can add the following options to the command:
 ```bash
 --token <value>       Storyblok personal access token
 --skipPrompts         deploys without prompts (default: false)
---output <value>      defines location of the built output file
---dir <value>         path to field plugin to be deployed (default: ".")
+--name <value>        name of plugin (Lowercase alphanumeric and dash)
+--no-publish          only applies when updating an existing plugin: uploads it without publishing a new version
+--output <value>      location of the built output file (default: `./dist/index.js`)
+--dir <value>         path to the field plugin's `package.json` directory (default: `.`)
+--dotEnvPath <value>  path to the `.env` file that stores `STORYBLOK_PERSONAL_ACCESS_TOKEN`
+--scope <value>       where to deploy the field plugin (choices: "my-plugins", "partner-portal", "organization")
 -h, --help            display help for command
 ```
 

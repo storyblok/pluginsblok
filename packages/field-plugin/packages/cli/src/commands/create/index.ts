@@ -1,6 +1,7 @@
 import { createMonorepo } from './monorepo'
 import { createStandalone } from './standalone'
 import {
+  exitIfInvalidNameOption,
   isValidPackageManager,
   selectPackageManager,
   selectRepositoryStructure,
@@ -11,6 +12,11 @@ import { CreateFunc, CreateArgs } from './types'
 export type { CreateArgs }
 
 export const create: CreateFunc = async (opts) => {
+  exitIfInvalidNameOption(opts.pluginName, '--pluginName')
+  if ('repoName' in opts) {
+    exitIfInvalidNameOption(opts.repoName, '--repoName')
+  }
+
   const {
     structure: structureParam,
     packageManager: packageManagerParam,

@@ -1,6 +1,10 @@
 import { existsSync } from 'fs'
 import { vi } from 'vitest'
-import { getPersonalAccessToken, checkIfSubDir } from '../utils'
+import {
+  getPersonalAccessToken,
+  checkIfSubDir,
+  isValidPackageName,
+} from '../utils'
 
 vi.mock('node:fs', async () => {
   const mod = await vi.importActual<typeof import('fs')>('fs')
@@ -128,5 +132,18 @@ describe('utils', () => {
       expect(checkIfSubDir('/abc', '/def/ghi')).toBe(false)
       expect(checkIfSubDir('/abc/', '/def/ghi')).toBe(false)
     })
+  })
+
+  describe('isValidPackageName', () => {
+    it('accepts lowercase alphanumeric and dash', () => {
+      expect(isValidPackageName('my-plugin-2')).toBe(true)
+    })
+
+    it.each(['', '..', '@acme/plugin', '../evil', 'a/b', 'a\\b', '\\evil', 'My_Plugin'])(
+      'rejects %j',
+      (name) => {
+        expect(isValidPackageName(name)).toBe(false)
+      },
+    )
   })
 })

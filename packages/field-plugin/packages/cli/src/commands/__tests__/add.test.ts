@@ -1,7 +1,8 @@
+import { existsSync } from 'fs'
 import { readdir, readFile } from 'fs/promises'
 import tempDir from 'temp-dir'
 import { add, PackageJson } from '../add'
-import { randomString } from '../../utils'
+import { randomString, selectPackageManager } from '../../utils'
 import { vi } from 'vitest'
 
 vi.mock('../../utils', async () => {
@@ -11,10 +12,19 @@ vi.mock('../../utils', async () => {
   return {
     ...actualUtils,
     runCommand: vi.fn(() => ({ stdout: '' })),
+    selectPackageManager: vi.fn(),
   }
 })
 
 describe('add', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
   it('adds a standalone template', async () => {
     const folderName = randomString()
     const name = randomString()
@@ -91,5 +101,25 @@ describe('add', () => {
         "vite.config.ts",
       ]
     `)
+  })
+
+  it('rejects a package name that would escape the target directory', async () => {
+    const exit = vi.spyOn(process, 'exit').mockImplementation(() => {
+      throw new Error('process.exit')
+    })
+    const dir = `${tempDir}/${randomString()}`
+    await expect(
+      add({
+        dir,
+        // @ts-expect-error unset, to check the name fails before any prompt
+        packageManager: undefined,
+        name: '../evil',
+        template: 'react',
+        structure: 'standalone',
+      }),
+    ).rejects.toThrow('process.exit')
+    expect(exit).toHaveBeenCalledWith(1)
+    expect(selectPackageManager).not.toHaveBeenCalled()
+    expect(existsSync(`${tempDir}/evil`)).toBe(false)
   })
 })
