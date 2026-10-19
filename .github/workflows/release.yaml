@@ -32,6 +32,7 @@ jobs:
           fetch-depth: 0
           filter: tree:0
           fetch-tags: true
+          persist-credentials: false
 
       - uses: ./.github/actions/setup-node
 
@@ -62,6 +63,11 @@ jobs:
           filter: tree:0
           fetch-tags: true
           token: ${{ secrets.GITHUB_TOKEN }}
+          # The only checkout in the repo that must keep its credentials:
+          # `nx release` pushes the version commit and tags, because
+          # `changelog.projectChangelogs.createRelease: "github"` in nx.json
+          # forces nx's `git.push` default to true.
+          persist-credentials: true
 
       - uses: ./.github/actions/setup-node
 
