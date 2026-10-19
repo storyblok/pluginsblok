@@ -28,6 +28,8 @@ ngrok http 3000
 
 Note down your assigned URL; this will be your `baseUrl` for the application.
 
+The starter allows the `ngrok.app`, `ngrok-free.app`, `ngrok.dev` and `ngrok-free.dev` domains in `allowedDevOrigins` (`next.config.js`). If you use another tunnel or domain, add it there so the Next.js dev server does not block its requests.
+
 ### Create a new Storyblok Extension
 
 There are two ways on how you can create a tool inside Storyblok. Depending on your plan and use case, choose one of the following options:

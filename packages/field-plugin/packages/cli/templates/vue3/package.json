@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@storyblok/field-plugin": "workspace:*",
-    "vue": "^3.2.47"
+    "vue": "^3.5.44"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",
