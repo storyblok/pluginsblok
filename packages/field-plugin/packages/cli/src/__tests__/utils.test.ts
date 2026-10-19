@@ -139,7 +139,7 @@ describe('utils', () => {
       expect(isValidPackageName('my-plugin-2')).toBe(true)
     })
 
-    it.each(['', '..', '../evil', 'a/b', 'a\\b', '\\evil', 'My_Plugin'])(
+    it.each(['', '..', '@acme/plugin', '../evil', 'a/b', 'a\\b', '\\evil', 'My_Plugin'])(
       'rejects %j',
       (name) => {
         expect(isValidPackageName(name)).toBe(false)
