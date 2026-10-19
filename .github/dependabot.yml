@@ -1,0 +1,22 @@
+version: 2
+updates:
+  # Keeps the SHA-pinned third-party actions fresh: Dependabot rewrites both the
+  # commit SHA and the trailing `# vX.Y.Z` comment, so pinning doesn't mean
+  # freezing.
+  - package-ecosystem: github-actions
+    # "/" only covers .github/workflows. The pnpm/action-setup pin lives in the
+    # composite action at .github/actions/setup-node/action.yaml, which needs its
+    # own directory entry; the glob also picks up composite actions added later.
+    directories:
+      - "/"
+      - "/.github/actions/*"
+    schedule:
+      interval: weekly
+    commit-message:
+      # Matches the repo's semantic-PR check (commitlint.yaml).
+      prefix: "chore"
+      include: scope
+    groups:
+      github-actions:
+        patterns:
+          - "*"
