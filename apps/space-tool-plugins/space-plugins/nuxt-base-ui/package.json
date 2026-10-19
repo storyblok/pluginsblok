@@ -18,5 +18,8 @@
 		"eslint": "^9.1.1",
 		"nuxt": "3.21.11",
 		"typescript": "^5.4.5"
+	},
+	"resolutions": {
+		"ast-walker-scope": "^0.9.0"
 	}
 }
