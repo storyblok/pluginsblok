@@ -152,7 +152,7 @@ export default {
 
 <style>
   .sbi-image-map__button {
-    font-size: .9rem;
+    font-size: 1.2rem;
     margin-top: 20px;
     padding: 10px;
   }
@@ -168,7 +168,7 @@ export default {
     position: relative;
   }
 
-  .sbi-image-map__preview {
+  .sbi-image-map__image-preview {
     display: block;
     width: 100%;
   }
