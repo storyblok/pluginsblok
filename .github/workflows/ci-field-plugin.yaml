@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: ./.github/actions/setup-node
 
       # The field-plugin subtree shares a single eslint config on its (private)
@@ -59,6 +61,8 @@ jobs:
         structure: [standalone, monorepo]
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: ./.github/actions/setup-node
 
       # Build the CLI so dist/templates carries the copied templates with the

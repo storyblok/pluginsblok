@@ -22,6 +22,8 @@ jobs:
           - apps/space-tool-plugins/tool-plugins/nextjs-starter/
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - run: corepack enable
       - run: corepack prepare yarn@3.6.3 --activate
       - name: Setup node
