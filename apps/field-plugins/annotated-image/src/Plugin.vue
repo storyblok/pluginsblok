@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-show="!modalIsOpen">
-      <sb-asset-selector :uid="uid" field="image"></sb-asset-selector>
+      <SbButton is-full-width size="small" label="Select asset" @click="selectImage" />
       <!-- Edit/Remove Buttons -->
       <div class="sbi-image-map__image-controls" v-if="model.image">
         <SbButton class="sbi-image-map__button" size="small" label="Edit annotations" @click="openModal" />
@@ -28,10 +28,10 @@
         <div class="sbi-image-map__modal">
           <!-- Controls -->
           <div class="sbi-image-map__controls">
-            <SbGroupButton size="small" hasSpaces variant="ghost">
+            <SbGroupButton size="small" hasSpaces variant="tertiary">
               <SbButton size="small" icon="plus" label="Add annotation" @click=addNode />
-              <SbButton icon="star" size="small" variant="danger" :disabled="pendingChanges" label="Save" @click=saveChanges />
-              <SbButton icon="close" size="small" variant="danger" label="Close" @click=closeModal />
+              <SbButton icon="star" size="small" variant="danger" :is-disabled="pendingChanges" label="Save" @click=saveChanges />
+              <SbButton icon="x" size="small" variant="danger" label="Close" @click=closeModal />
             </SbGroupButton>
           </div>
           <!-- Map -->
@@ -57,49 +57,48 @@
 </template>
 
 <script>
-import SbButton from 'storyblok-design-system/src/components/Button'
-import SbGroupButton from 'storyblok-design-system/src/components/GroupButton'
+import { SbButton, SbGroupButton } from '@storyblok/design-system'
 import MapNode from './MapNode.vue'
 
 export default {
-  mixins: [window.Storyblok.plugin],
   components: {
     SbButton,
     SbGroupButton,
     MapNode
   },
+  props: ['plugin'],
   data() {
     return {
       dragging: false,
       dragging_index: null,
-      modalIsOpen: false,
       mapNodes: []
     }
   },
+  mounted() {
+    if(!this.model.image && this.plugin.data.options.fallback_image) {
+      this.setContent({ image: this.plugin.data.options.fallback_image })
+    }
+  },
   methods: {
-    initWith() {
-      return {
-        image: '',
-        plugin: 'sbi-annotated-image',
-        mapNodes: []
-      }
+    setContent(changes) {
+      this.plugin.actions.setContent({ ...this.model, ...changes })
     },
-    pluginCreated() {
-      if(!this.model.image && this.options.fallback_image) {
-        setTimeout(() => this.model.image = this.options.fallback_image, 100)
+    async selectImage() {
+      const asset = await this.plugin.actions.selectAsset()
+      if (asset.filename === this.model.image) {
+        return
       }
+      this.setContent({ image: asset.filename, mapNodes: [] })
     },
     openModal(){
       this.mapNodes = JSON.parse(JSON.stringify(this.model.mapNodes))
-      this.$emit('toggle-modal', true)
-      this.modalIsOpen = true
+      this.plugin.actions.setModalOpen(true)
     },
     saveChanges() {
-      this.model.mapNodes = JSON.parse(JSON.stringify(this.mapNodes))
+      this.setContent({ mapNodes: JSON.parse(JSON.stringify(this.mapNodes)) })
     },
     closeModal(){
-      this.$emit('toggle-modal', false)
-      this.modalIsOpen = false
+      this.plugin.actions.setModalOpen(false)
     },
     startDraggingNode(index) {
       console.log('start dragging')
@@ -133,7 +132,7 @@ export default {
       return index === this.dragging_index
     },
     removeImage() {
-      this.model.image = ''
+      this.setContent({ image: '', mapNodes: [] })
     },
     setNodeDirection(data) {
       this.mapNodes[data.index].direction = data.direction
@@ -141,16 +140,14 @@ export default {
     }
   },
   computed: {
+    model() {
+      return this.plugin.data.content
+    },
+    modalIsOpen() {
+      return this.plugin.data.isModalOpen
+    },
     pendingChanges() {
       return JSON.stringify(this.mapNodes) === JSON.stringify(this.model.mapNodes)
-    }
-  },
-  watch: {
-    'model': {
-      handler: function (value) {
-        this.$emit('changed-model', value);
-      },
-      deep: true
     }
   }
 }
@@ -158,7 +155,7 @@ export default {
 
 <style>
   .sbi-image-map__button {
-    font-size: .9rem;
+    font-size: 1.2rem;
     margin-top: 20px;
     padding: 10px;
   }
@@ -174,7 +171,7 @@ export default {
     position: relative;
   }
 
-  .sbi-image-map__preview {
+  .sbi-image-map__image-preview {
     display: block;
     width: 100%;
   }
