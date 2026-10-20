@@ -4,6 +4,7 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -15,21 +16,11 @@
     "noUncheckedIndexedAccess": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": [
-      "webpack-env",
-      "jest"
-    ],
+    "types": ["vite/client", "vitest/globals"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ],
+    "lib": ["esnext", "dom", "dom.iterable"]
   },
   "include": [
     "src/**/*.ts",
@@ -38,7 +29,5 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
