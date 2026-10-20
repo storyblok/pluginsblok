@@ -40,6 +40,7 @@ This plugin now uses Vue 3 and [@storyblok/field-plugin](https://www.storyblok.c
 
 - There is no `dist/export.js` to paste into the field-type editor anymore. Deploy with `yarn deploy` instead.
 - To update an existing plugin, deploy with the same name and choose to update it, for example `yarn deploy --name <your-plugin-name>`.
+- During the update, the CLI asks whether the options from `field-plugin.config.json` should replace the plugin options. Answer **Yes**. The option values you set on your fields stay the same.
 - Content saved by the Vue 2 version still works. The content shape (`plugin`, `value`) has not changed.
 
 # App Description
