@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../styles';
+@use '../../styles' as *;
 $knob-radius: 13px;
 
 .thumb {

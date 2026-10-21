@@ -1,0 +1,40 @@
+{
+  "options": [
+    {
+      "name": "minValue",
+      "value": ""
+    },
+    {
+      "name": "maxValue",
+      "value": ""
+    },
+    {
+      "name": "defaultValue",
+      "value": ""
+    },
+    {
+      "name": "marks",
+      "value": ""
+    },
+    {
+      "name": "stepSize",
+      "value": ""
+    },
+    {
+      "name": "minimumSignificantDigits",
+      "value": ""
+    },
+    {
+      "name": "maximumSignificantDigits",
+      "value": ""
+    },
+    {
+      "name": "style",
+      "value": ""
+    },
+    {
+      "name": "unit",
+      "value": ""
+    }
+  ]
+}
