@@ -78,7 +78,7 @@ export default {
           return undefined
         }
         return marks
-      } catch (e) {
+      } catch {
         return undefined
       }
     },
