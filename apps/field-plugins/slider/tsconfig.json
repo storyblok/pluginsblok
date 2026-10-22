@@ -4,7 +4,7 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,10 +14,9 @@
     "useDefineForClassFields": true,
     "noUncheckedIndexedAccess": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "types": ["vite/client", "vitest/globals"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable"]
   },

@@ -90,9 +90,9 @@
 </template>
 
 <script>
-import { Thumb } from '@/components/Thumb'
+import Thumb from '@/components/Thumb/Thumb.vue'
 import { roundToNearest } from '@/utils/roundToNearest'
-import { Tooltip } from '@/components/Tooltip'
+import Tooltip from '@/components/Tooltip/Tooltip.vue'
 import { valueFromCoordinate } from '@/components/HorizontalSlider/valueFromCoordinate'
 import { xCoordinateFromValue } from '@/components/HorizontalSlider/xCoordinateFromValue'
 

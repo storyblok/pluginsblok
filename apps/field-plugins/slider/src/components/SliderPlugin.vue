@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { HorizontalSlider } from '@/components/HorizontalSlider'
+import HorizontalSlider from '@/components/HorizontalSlider/HorizontalSlider.vue'
 import { numberFromString } from '@/utils'
 
 export default {
