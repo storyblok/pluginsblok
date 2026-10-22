@@ -18,8 +18,6 @@ export default tseslint.config(
     rules: {
       // Keep the existing component names
       'vue/multi-word-component-names': 'off',
-      // Doesn't see variables from `<script setup>` that are used in the template
-      'no-useless-assignment': 'off',
     },
   },
   {
