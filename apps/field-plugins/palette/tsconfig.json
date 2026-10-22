@@ -5,7 +5,7 @@
     "strict": true,
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -15,10 +15,9 @@
     "useDefineForClassFields": true,
     "noUncheckedIndexedAccess": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "types": ["vite/client", "vitest/globals"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable"]
   },
