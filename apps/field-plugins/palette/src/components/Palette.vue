@@ -1,5 +1,5 @@
-<script>
-import Swatch from './Swatch'
+<script lang="jsx">
+import Swatch from './Swatch.vue'
 
 const defaultColors = [
   '#00B3B0',
@@ -82,11 +82,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .plugin-swatch-grid {
   display: flex;
   flex-wrap: wrap;
-  //justify-items: start;
-  //width: auto;
 }
 </style>

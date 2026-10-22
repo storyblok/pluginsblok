@@ -16,44 +16,32 @@ A custom field-type for Storyblok that allow users to select a color from a pale
 
 ![demo.gif](docs/demo.gif)
 
-## How to use
-
-To add this field type to a Storyblok space, you need to
-
-1. Create a new field type in the Storyblok app.
-2. Open `src/entries/main.ts` and change the `pluginName` argument from `'storyblok-palette'` to the name of your
-   plugin.
-3. Run
+## Getting Started
 
 ```bash
 # install dependencies
 yarn install
 
-# run the plugin
+# start the dev server and open the printed Sandbox link
 yarn dev
 
-# format the code
-yarn lint
-
-# test the plugin
+# run the tests
 yarn test
 
-# build the plugin
-yarn build
+# deploy the plugin using our @storyblok/field-plugin-cli
+yarn deploy
 ```
 
-4. Copy the contents of `dist/main.js` into the field type editor.
-5. Save
-6. Publish
+`yarn deploy` asks for your [personal access token](https://app.storyblok.com/#/me/account?tab=token), the plugin's name, and where to add it (My Plugins, Organization, or Partner Portal).
 
-### Import plugin into Storyblok
+## Upgrading from the Vue 2 version
 
-Ensure that the `pluginName` property in `src/config.ts` equals that of your plugin name in the storyblok application.
+This plugin now uses Vue 3 and [@storyblok/field-plugin](https://www.storyblok.com/docs/plugins/field-plugins). The way you build and deploy it has changed:
 
-Copy the contents of the `dist/export.js` file into the [plugin section](https://app.storyblok.com/#!/me/plugins) of
-Storyblok.
-
-> **TIP**: On MacOs, run `yarn mac-build`. This will copy the text content of the `export.js` to your clipboard.
+- There is no `dist/export.js` to paste into the field-type editor anymore. Deploy with `yarn deploy` instead.
+- To update an existing plugin, deploy with the same name and choose to update it, for example `yarn deploy --name <your-plugin-name>`.
+- During the update, the CLI asks whether the options from `field-plugin.config.json` should replace the plugin options. Answer **Yes**. The option values you set on your fields stay the same.
+- Content saved by the Vue 2 version still works. The content shape (`plugin`, `value`) has not changed.
 
 # App Description
 

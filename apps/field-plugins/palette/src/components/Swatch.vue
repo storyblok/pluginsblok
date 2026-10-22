@@ -1,5 +1,5 @@
-<script>
-import Checkmark from '@/components/Checkmark'
+<script lang="jsx">
+import Checkmark from '@/components/Checkmark.vue'
 import { contrastRatio, hexToSRGB, relativeLuminance } from '@/utils'
 
 const white = '#FFFFFF'
@@ -78,53 +78,51 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-$small-size: 20px;
-
+<style scoped>
 .plugin-swatch {
   padding: 10px;
+}
 
-  &--small {
-    border-radius: 5px;
-    padding: 15px;
+.plugin-swatch--small {
+  border-radius: 5px;
+  padding: 15px;
+}
 
-    & .plugin-swatch__button {
-      width: $small-size;
-      height: $small-size;
-      border-radius: 5px;
-    }
+.plugin-swatch--small .plugin-swatch__button {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
 
-    &:not(.plugin-swatch--selected) {
-      border: 1px solid transparent;
-    }
+.plugin-swatch--small:not(.plugin-swatch--selected) {
+  border: 1px solid transparent;
+}
 
-    &.plugin-swatch--selected {
-      border: 1px solid #00b3b0;
-    }
-  }
+.plugin-swatch--small.plugin-swatch--selected {
+  border: 1px solid #00b3b0;
+}
 
-  &--medium {
-    border-radius: 5px;
-    padding: 5px;
+.plugin-swatch--medium {
+  border-radius: 5px;
+  padding: 5px;
+}
 
-    & .plugin-swatch__button {
-      width: 36px;
-      height: 36px;
-      border-radius: 5px;
-    }
-  }
+.plugin-swatch--medium .plugin-swatch__button {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+}
 
-  &--large {
-    border-radius: 0px;
-    padding: 0px;
-    width: 100%;
+.plugin-swatch--large {
+  border-radius: 0px;
+  padding: 0px;
+  width: 100%;
+}
 
-    & .plugin-swatch__button {
-      height: $small-size;
-      width: 100%;
-      border-radius: 0px;
-    }
-  }
+.plugin-swatch--large .plugin-swatch__button {
+  height: 20px;
+  width: 100%;
+  border-radius: 0px;
 }
 
 .plugin-swatch__button {
@@ -140,6 +138,6 @@ $small-size: 20px;
 }
 
 .plugin-swatch__checkmark {
-  height: $small-size;
+  height: 20px;
 }
 </style>
