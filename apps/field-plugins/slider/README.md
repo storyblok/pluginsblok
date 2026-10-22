@@ -34,7 +34,7 @@ yarn test
 yarn deploy
 ```
 
-`yarn deploy` asks for your [personal access token](https://app.storyblok.com/#/me/account?tab=token), the plugin's name, and where to add it (My Plugins or Partner Portal).
+`yarn deploy` asks for your [personal access token](https://app.storyblok.com/#/me/account?tab=token), the plugin's name, and where to add it (My Plugins, Organization, or Partner Portal).
 
 ## Upgrading from the Vue 2 version
 
