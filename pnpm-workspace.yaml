@@ -11,3 +11,8 @@ allowBuilds:
   core-js: true
   esbuild: true
   nx: true
+overrides:
+  # @microsoft/api-extractor asks for lodash ~4.17.15, which caps at 4.17.x.
+  # vite-plugin-dts 4.2.1 pins it to 7.47.7. Remove this once vite-plugin-dts
+  # and @microsoft/api-extractor (>= 7.59, no lodash dependency) are bumped.
+  'lodash@~4.17.15': ^4.18.1
