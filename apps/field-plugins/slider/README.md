@@ -18,25 +18,32 @@ A field plugin for Storyblok that allow users to select a number value from a ra
 
 ![demo.gif](docs/demo.gif)
 
-## How to use
-
-To add this field plugin to a Storyblok space, you need to
-
-1. Create a new field plugin in the Storyblok app.
-2. Open `src/entries/main.ts` and change the `pluginName` argument from `'storyblok-slider'` to the name of your plugin.
-3. Run
+## Getting Started
 
 ```bash
 # install dependencies
 yarn install
 
-# build the plugin
-yarn build
+# start the dev server and open the printed Sandbox link
+yarn dev
+
+# run the tests
+yarn test
+
+# deploy the plugin using our @storyblok/field-plugin-cli
+yarn deploy
 ```
 
-4. Copy the contents of `dist/main.js` into the field plugin editor.
-5. Save
-6. Publish
+`yarn deploy` asks for your [personal access token](https://app.storyblok.com/#/me/account?tab=token), the plugin's name, and where to add it (My Plugins, Organization, or Partner Portal).
+
+## Upgrading from the Vue 2 version
+
+This plugin now uses Vue 3 and [@storyblok/field-plugin](https://www.storyblok.com/docs/plugins/field-plugins). The way you build and deploy it has changed:
+
+- There is no `dist/production.js` to paste into the field plugin editor anymore. Deploy with `yarn deploy` instead.
+- To update an existing plugin, deploy with the same name and choose to update it, for example `yarn deploy --name <your-plugin-name>`.
+- During the update, the CLI asks whether the options from `field-plugin.config.json` should replace the plugin options. Answer **Yes**. The option values you set on your fields stay the same.
+- Content saved by the Vue 2 version still works. The content shape (`plugin`, `value`) has not changed.
 
 # App Description
 

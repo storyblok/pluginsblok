@@ -3,7 +3,6 @@
  * `number`. All other combination of characters yield `undefined`.
  */
 export const numberFromString = (str: string): number | undefined => {
-  // eslint-disable-next-line no-restricted-syntax
   const parsed = Number(str)
   return str !== '' && !hasWhiteSpace(str) && !isNaN(parsed) && isFinite(parsed)
     ? parsed

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { HorizontalSlider } from '@/components/HorizontalSlider'
+import HorizontalSlider from '@/components/HorizontalSlider/HorizontalSlider.vue'
 import { numberFromString } from '@/utils'
 
 export default {
@@ -19,21 +19,19 @@ export default {
     HorizontalSlider,
   },
   props: {
-    options: {
+    plugin: {
       type: Object,
-      default: undefined,
-    },
-    setValue: {
-      type: Function,
-      default: () => undefined,
-    },
-    value: {
-      type: Object,
-      default: undefined,
+      required: true,
     },
   },
 
   computed: {
+    options() {
+      return this.plugin.data.options
+    },
+    value() {
+      return this.plugin.data.content
+    },
     formatter() {
       try {
         return new Intl.NumberFormat(undefined, {
@@ -80,7 +78,7 @@ export default {
           return undefined
         }
         return marks
-      } catch (e) {
+      } catch {
         return undefined
       }
     },
@@ -90,10 +88,15 @@ export default {
         : this.defaultValue
     },
   },
-  created() {
+  mounted() {
     if (typeof this.value?.value !== 'number') {
       this.setValue({ value: this.defaultValue })
     }
+  },
+  methods: {
+    setValue(value) {
+      this.plugin.actions.setContent({ ...this.value, ...value })
+    },
   },
 }
 </script>

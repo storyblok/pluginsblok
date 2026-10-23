@@ -90,9 +90,9 @@
 </template>
 
 <script>
-import { Thumb } from '@/components/Thumb'
+import Thumb from '@/components/Thumb/Thumb.vue'
 import { roundToNearest } from '@/utils/roundToNearest'
-import { Tooltip } from '@/components/Tooltip'
+import Tooltip from '@/components/Tooltip/Tooltip.vue'
 import { valueFromCoordinate } from '@/components/HorizontalSlider/valueFromCoordinate'
 import { xCoordinateFromValue } from '@/components/HorizontalSlider/xCoordinateFromValue'
 
@@ -155,7 +155,7 @@ export default {
     document.addEventListener('mousemove', this.handleMove)
     document.addEventListener('touchmove', this.handleMove)
   },
-  destroyed() {
+  unmounted() {
     // End touch/click
     document.removeEventListener('mouseup', this.handleReleaseThumb)
     document.removeEventListener('mouseleave', this.handleReleaseThumb)
@@ -231,7 +231,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../styles';
+@use '../../styles' as *;
 $gap: 3px;
 $z-index-rail: 0;
 $z-index-thumb: 1;
