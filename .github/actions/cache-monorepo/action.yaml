@@ -4,7 +4,7 @@ runs:
   using: "composite"
   steps:
     - name: Cache pnpm store
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: .pnpm-store
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
@@ -12,7 +12,7 @@ runs:
           ${{ runner.os }}-pnpm-store-
 
     - name: Cache Nx cache
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: .nx/cache
         key: ${{ runner.os }}-nx-cache-${{ github.sha }}
