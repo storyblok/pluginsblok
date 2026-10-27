@@ -1,19 +1,11 @@
 import StoryblokClient, { ISbStoriesParams } from 'storyblok-js-client';
-import {
-	object,
-	optional,
-	number,
-	string,
-	pipe,
-	unknown,
-	transform,
-} from 'valibot';
+import { object, optional, number, string, pipe, toNumber } from 'valibot';
 import { parseQuery } from '../utils/parse';
 import { StoriesResponse, Story } from '~/types/story';
 
 export default defineEventHandler(async (event): Promise<StoriesResponse> => {
 	const { spaceId, accessToken } = event.context.appSession;
-	// We're using `pipe(unknown(), transform(Number), number())` instead of `number()`.
+	// We're using `pipe(string(), toNumber(), number())` instead of `number()`.
 	// When requesting with query parameters like:
 	// /stories?perPage=10&page=4
 	// the parsed result is just strings like '10' and '4'.
@@ -22,8 +14,8 @@ export default defineEventHandler(async (event): Promise<StoriesResponse> => {
 	const query = parseQuery({
 		event,
 		schema: object({
-			perPage: optional(pipe(unknown(), transform(Number), number())),
-			page: optional(pipe(unknown(), transform(Number), number())),
+			perPage: optional(pipe(string(), toNumber(), number())),
+			page: optional(pipe(string(), toNumber(), number())),
 			slug: optional(string()),
 			query: optional(string()),
 		}),
