@@ -28,8 +28,8 @@ export default defineEventHandler(async (event): Promise<StoriesResponse> => {
 
 	const params: ISbStoriesParams = {
 		version: 'published',
-		per_page: query.perPage ?? 25,
-		page: query.page ?? 1,
+		per_page: query.perPage || 25,
+		page: query.page || 1,
 	};
 	if (query.slug) {
 		params.by_slugs = query.slug;
