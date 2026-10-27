@@ -632,14 +632,14 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       react-router-dom:
-        specifier: ^6.30.0
-        version: 6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^6.30.6
+        version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       use-debounce:
         specifier: ^9.0.3
         version: 9.0.4(react@18.3.1)
       use-query-params:
         specifier: ^2.2.1
-        version: 2.2.1(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 2.2.1(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       usehooks-ts:
         specifier: 2.16.0
         version: 2.16.0(react@18.3.1)
@@ -4137,10 +4137,10 @@ packages:
         integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==,
       }
 
-  "@remix-run/router@1.23.0":
+  "@remix-run/router@1.23.4":
     resolution:
       {
-        integrity: sha512-O3rHJzAQKamUz1fvE0Qaw0xSFqsA/yafi2iqeE0pvdFtCO1viYx8QL6f3Ln/aCCTLxs68SLf0KPM9eSeM8yBnA==,
+        integrity: sha512-q7j5geK7xs3UJSdm9/iytUNclBnLmYx1EnSeCFXHPeutdqgIMeFeHtUZgS3EhlKxdBEAu8OwtJCwmLrEzpSs7Q==,
       }
     engines: { node: ">=14.0.0" }
 
@@ -11215,20 +11215,20 @@ packages:
       }
     engines: { node: ">=0.10.0" }
 
-  react-router-dom@6.30.1:
+  react-router-dom@6.30.6:
     resolution:
       {
-        integrity: sha512-llKsgOkZdbPU1Eg3zK8lCn+sjD9wMRZZPuzmdWWX5SUs8OFkN5HnFVC0u5KMeMaC9aoancFI/KoLuKPqN+hxHw==,
+        integrity: sha512-0RHKZz7wwffvkU+2MFVT2NnjK44ssLEV+m0CAJaS2Ksmorrwj7WxH00jO0SOCW26/tINUnJHToXblDs33I38YQ==,
       }
     engines: { node: ">=14.0.0" }
     peerDependencies:
       react: ">=16.8"
       react-dom: ">=16.8"
 
-  react-router@6.30.1:
+  react-router@6.30.6:
     resolution:
       {
-        integrity: sha512-X1m21aEmxGXqENEPG3T6u0Th7g0aS4ZmoNynhbs+Cn+q+QGTLt+d5IQ2bHAXKzKcxGJjxACpVbnYQSCRcfxHlQ==,
+        integrity: sha512-5HfK7k5im7LTOB0EqCQmfvy4C13G92Ssj1VTmouTK3AJvyjKTnFuCV0vcMAD/JS+JC4DvDIBRrlAeJIFjh5VWg==,
       }
     engines: { node: ">=14.0.0" }
     peerDependencies:
@@ -15575,7 +15575,7 @@ snapshots:
 
   "@popperjs/core@2.11.8": {}
 
-  "@remix-run/router@1.23.0": {}
+  "@remix-run/router@1.23.4": {}
 
   "@rolldown/pluginutils@1.0.0-beta.27": {}
 
@@ -20845,16 +20845,16 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
-  react-router-dom@6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@6.30.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      "@remix-run/router": 1.23.0
+      "@remix-run/router": 1.23.4
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.30.1(react@18.3.1)
+      react-router: 6.30.6(react@18.3.1)
 
-  react-router@6.30.1(react@18.3.1):
+  react-router@6.30.6(react@18.3.1):
     dependencies:
-      "@remix-run/router": 1.23.0
+      "@remix-run/router": 1.23.4
       react: 18.3.1
 
   react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
@@ -21986,13 +21986,13 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  use-query-params@2.2.1(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+  use-query-params@2.2.1(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       serialize-query-params: 2.0.2
     optionalDependencies:
-      react-router-dom: 6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-router-dom: 6.30.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   usehooks-ts@2.16.0(react@18.3.1):
     dependencies:
