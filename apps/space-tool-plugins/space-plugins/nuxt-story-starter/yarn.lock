@@ -6875,7 +6875,7 @@ __metadata:
     nuxt: 3.21.11
     nuxt-lucide-icons: 1.0.5
     storyblok-js-client: ^6.2.0
-    valibot: ^0.19.0
+    valibot: ^1.5.0
     vue: ^3.5.40
     vue-router: ^4.2.5
   languageName: unknown
@@ -9799,10 +9799,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"valibot@npm:^0.19.0":
-  version: 0.19.0
-  resolution: "valibot@npm:0.19.0"
-  checksum: 1a99669f2f4f285e1865fb14c92206c9d9b5ceced7cb38410806623a135f2a607db53b33f94d55a13bc331fee53a7d2a4fa22756769ed8a2382980b7a2c7af56
+"valibot@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "valibot@npm:1.5.0"
+  peerDependencies:
+    typescript: ">=5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 603dd45c226e36cc127c249d911f01fa6397f2cebd57c4516711baf45ecde1d6083ed01795c743ca5c1f9bd833108d0d7e4bee45b51daf6359e8f8e26f6e1447
   languageName: node
   linkType: hard
 
