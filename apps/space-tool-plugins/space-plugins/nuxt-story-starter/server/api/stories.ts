@@ -28,14 +28,13 @@ export default defineEventHandler(async (event): Promise<StoriesResponse> => {
 
 	const params: ISbStoriesParams = {
 		version: 'published',
-		per_page: query.perPage ?? 25,
-		page: query.page ?? 1,
+		per_page: query.perPage || 25,
+		page: query.page || 1,
 	};
 	if (query.slug) {
 		params.by_slugs = query.slug;
 	}
 	if (query.query) {
-		// @ts-expect-error there is a typing error from the library
 		params.text_search = query.query;
 	}
 	const { data, total } = await storyblokClient.get(

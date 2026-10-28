@@ -1,6 +1,5 @@
 import { FetchError } from 'ofetch';
 import type { Alert, AlertType } from '~/types/alert';
-import type { NuxtError } from 'nuxt/app';
 
 const createAlert = () => {
 	const alert = reactive<Alert>({
@@ -50,9 +49,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 		if (err instanceof FetchError) {
 			error(err.data.message);
-		} else if (isNuxtError(err as any)) {
-			const nuxtError = err as NuxtError;
-			error(nuxtError.statusMessage || 'Unknown error');
+		} else if (isNuxtError(err)) {
+			error(err.statusMessage || 'Unknown error');
 		} else {
 			showError(err as Error);
 		}
