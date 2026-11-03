@@ -15,7 +15,7 @@ jobs:
     environment: production
     permissions:
       contents: read
-      id-token: write # needed for provenance data generation
+      id-token: write # OIDC trusted publishing to npm + provenance
     timeout-minutes: 10
     steps:
       - name: Checkout repository
@@ -26,8 +26,6 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-node
-
-      - run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
 
       - name: Build publishable packages
         run: pnpm nx run-many -p="tag:npm:public" -t=build
