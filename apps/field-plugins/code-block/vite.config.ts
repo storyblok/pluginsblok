@@ -2,11 +2,10 @@ import { defineConfig, type PluginOption } from 'vite'
 import react from '@vitejs/plugin-react'
 import cssInjectedByJs from 'vite-plugin-css-injected-by-js'
 import * as querystring from 'querystring'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), cssInjectedByJs(), visualizer(), printProd(), printDev()],
+  plugins: [react(), cssInjectedByJs(), printProd(), printDev()],
   build: {
     rollupOptions: {
       output: {

@@ -1,4 +1,4 @@
-import { z, ZodSchema } from 'zod'
+import { z, ZodType } from 'zod'
 import { defaultHighlightStateOptionValue } from './defaultHighlightStateOptionValue'
 
 export type CodeBlockOptions = {
@@ -26,7 +26,7 @@ const HighlightStateOptionSchema = z
         ] as HighlightStateOptions),
   )
 
-const LanguagesOptionSchema = z.array(z.string()).nonempty().optional()
+const LanguagesOptionSchema = z.tuple([z.string()], z.string()).optional()
 
 export type HighlightStateOption = {
   value: string
@@ -90,7 +90,7 @@ const optionsSchema = z.object({
  * @param schema
  * @param data
  */
-const superSafeParse = <Schema extends ZodSchema>(
+const superSafeParse = <Schema extends ZodType>(
   schema: Schema,
   data: unknown,
 ): Error | z.infer<Schema> => {
