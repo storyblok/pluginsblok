@@ -1,12 +1,12 @@
 import type { H3Event } from 'h3';
-import { type BaseSchema, safeParse } from 'valibot';
+import { type GenericSchema, safeParse } from 'valibot';
 
-export const parseQuery = <TInput>({
+export const parseQuery = <TSchema extends GenericSchema>({
 	event,
 	schema,
 }: {
 	event: H3Event;
-	schema: BaseSchema<TInput>;
+	schema: TSchema;
 }) => {
 	const result = safeParse(schema, getQuery(event));
 	if (!result.success) {

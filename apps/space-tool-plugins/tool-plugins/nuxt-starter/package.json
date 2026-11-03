@@ -30,7 +30,8 @@
 		"vue-router": "^4.2.5"
 	},
 	"resolutions": {
-		"ast-walker-scope": "^0.9.0"
+		"ast-walker-scope": "^0.9.0",
+		"replace-in-file/yargs": "^18.1.0"
 	},
 	"packageManager": "yarn@3.6.3"
 }
