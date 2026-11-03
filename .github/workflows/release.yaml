@@ -17,9 +17,34 @@ env:
   NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
 
 jobs:
+  # Enforce the branch/channel invariant before anything versions or pushes:
+  # main releases stable (npm latest) only; prereleases run on their channel
+  # branch (beta/alpha/next/rc). This keeps a prerelease from landing on main
+  # even though the release App token can bypass the protect-main ruleset.
+  guard:
+    name: Validate channel
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Enforce stable-only on main, prerelease-only off main
+        env:
+          REF: ${{ github.ref_name }}
+          PREID: ${{ inputs.preid }}
+        run: |
+          if [ "$REF" = "main" ] && [ -n "$PREID" ]; then
+            echo "::error::preid='$PREID' is not allowed on main — main releases stable (latest) only."
+            exit 1
+          fi
+          if [ "$REF" != "main" ] && [ -z "$PREID" ]; then
+            echo "::error::A stable release (empty preid) must run on main, not '$REF'."
+            exit 1
+          fi
+          echo "OK: ref='$REF' preid='${PREID:-<stable>}'"
+
   dry-run:
     name: Dry Run
     runs-on: ubuntu-latest
+    needs: guard
     environment: test
     permissions:
       contents: read
@@ -48,7 +73,7 @@ jobs:
   # Production release requires human approval
   release:
     name: Release (Production)
-    needs: dry-run
+    needs: [guard, dry-run]
     runs-on: ubuntu-latest
     environment: production
     permissions:
