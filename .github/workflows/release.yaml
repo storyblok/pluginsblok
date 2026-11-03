@@ -23,7 +23,7 @@ jobs:
   # even though the release App token can bypass the protect-main ruleset.
   guard:
     name: Validate channel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 2
     steps:
       - name: Enforce stable-only on main, prerelease-only off main
