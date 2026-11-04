@@ -5,7 +5,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storyblok/app-extension-auth.git"
+    "url": "https://github.com/storyblok/pluginsblok.git",
+    "directory": "packages/app-extension-auth"
   },
   "type": "module",
   "main": "dist/index.cjs",
