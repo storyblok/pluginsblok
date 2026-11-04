@@ -12,8 +12,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storyblok/field-plugin.git",
-    "directory": "packages/field-plugin-cli"
+    "url": "https://github.com/storyblok/pluginsblok.git",
+    "directory": "packages/field-plugin/packages/cli"
   },
   "scripts": {
     "dev": "node bin.js",
