@@ -17,6 +17,8 @@ jobs:
       contents: read
       id-token: write # OIDC trusted publishing to npm + provenance
     timeout-minutes: 10
+    env:
+      npm_config_use_node_version: "24.18.0"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,6 +28,10 @@ jobs:
           persist-credentials: false
 
       - uses: ./.github/actions/setup-node
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.18.0"
 
       - name: Build publishable packages
         run: pnpm nx run-many -p="tag:npm:public" -t=build
