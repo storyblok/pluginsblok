@@ -329,11 +329,11 @@
   integrity sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==
 
 "@storyblok/field-plugin@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@storyblok/field-plugin/-/field-plugin-1.7.1.tgz#f79a38a82cf9b35174bf314a64cebc5c404f45e4"
-  integrity sha512-gPFystdzpwtFRRs2wg0ukCCgSDyvgxRNZOT25rwiJu+H0sCjpnGMck+Z18WtsFhYD/1kjmprZ5N96edKUG89DA==
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/field-plugin/-/field-plugin-1.7.2.tgz#6542eb86be07e1154b759011b3a6451cbacbb9cc"
+  integrity sha512-RQ3TDPH7LYRb7RbbMD2rQL/UVwH27ExC+h48OP2cdvZ+sAIVe3GFPASFfc6UbFaz6KPOZDDBHicRAU0LxoRtJQ==
   dependencies:
-    valibot "1.1.0"
+    valibot "1.4.2"
 
 "@types/chai@^5.2.2":
   version "5.2.3"
@@ -1284,10 +1284,10 @@ util-deprecate@^1.0.2:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
-valibot@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/valibot/-/valibot-1.1.0.tgz#873bb1af9e1577391690307bfe0520bd1360ec2d"
-  integrity sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==
+valibot@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/valibot/-/valibot-1.4.2.tgz#da857781187f170aeaf4498d463d25028615b0d6"
+  integrity sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==
 
 vite-plugin-css-injected-by-js@4.0.1:
   version "4.0.1"
