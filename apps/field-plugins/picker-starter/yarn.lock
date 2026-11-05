@@ -579,11 +579,11 @@
     throttle-debounce "^4.0.1"
 
 "@storyblok/field-plugin@^1.4.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@storyblok/field-plugin/-/field-plugin-1.7.0.tgz#1a78cdbd38a23c3ded20c6f2b5e629f66ab08654"
-  integrity sha512-7t2ZlAJKQsG0ywDtr6vBaU/ftUDpKhD8D+YNKsicFJ8vJfnx1y6G+sW929eARB/TKaK1qqKM8hMCFP1829ddFg==
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/field-plugin/-/field-plugin-1.7.2.tgz#6542eb86be07e1154b759011b3a6451cbacbb9cc"
+  integrity sha512-RQ3TDPH7LYRb7RbbMD2rQL/UVwH27ExC+h48OP2cdvZ+sAIVe3GFPASFfc6UbFaz6KPOZDDBHicRAU0LxoRtJQ==
   dependencies:
-    valibot "1.1.0"
+    valibot "1.4.2"
 
 "@testing-library/jest-dom@^6.1.4":
   version "6.8.0"
@@ -2583,10 +2583,10 @@ v8-compile-cache-lib@^3.0.1:
   resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
   integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
 
-valibot@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/valibot/-/valibot-1.1.0.tgz#873bb1af9e1577391690307bfe0520bd1360ec2d"
-  integrity sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw==
+valibot@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/valibot/-/valibot-1.4.2.tgz#da857781187f170aeaf4498d463d25028615b0d6"
+  integrity sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==
 
 vite-node@0.34.6:
   version "0.34.6"
