@@ -31,7 +31,8 @@
 	},
 	"resolutions": {
 		"ast-walker-scope": "^0.9.0",
-		"replace-in-file/yargs": "^18.1.0"
+		"replace-in-file/yargs": "^18.1.0",
+		"vite-node/es-module-lexer": "^3.0.4"
 	},
 	"packageManager": "yarn@3.6.3"
 }

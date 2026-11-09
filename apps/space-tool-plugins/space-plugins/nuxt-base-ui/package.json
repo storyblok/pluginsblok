@@ -21,6 +21,7 @@
 	},
 	"resolutions": {
 		"ast-walker-scope": "^0.9.0",
-		"eslint-plugin-jsdoc": "^63.3.3"
+		"eslint-plugin-jsdoc": "^63.3.3",
+		"vite-node/es-module-lexer": "^3.0.4"
 	}
 }
