@@ -3497,10 +3497,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-module-lexer@npm:^2.0.0":
-  version: 2.3.2
-  resolution: "es-module-lexer@npm:2.3.2"
-  checksum: 4f8c2b36c185afab4eab102d3e75284521688388e42a6dac830e62e5d7b53b8a33880e36e8e86b4ca880e5f5eed7e69d038f8ae2550f4ce9af28e4e156040814
+"es-module-lexer@npm:^3.0.0, es-module-lexer@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "es-module-lexer@npm:3.0.4"
+  checksum: 460475a25b2efb44d0699774bbaf2ad4d0df4f0062736211fb210e11767f9f6f68103492aae869c8d5923aa220d291459eff3928d5922aa700d6094d007dc4ad
   languageName: node
   linkType: hard
 
@@ -4135,15 +4135,15 @@ __metadata:
   linkType: hard
 
 "impound@npm:^1.1.6":
-  version: 1.2.0
-  resolution: "impound@npm:1.2.0"
+  version: 1.2.1
+  resolution: "impound@npm:1.2.1"
   dependencies:
     "@jridgewell/trace-mapping": ^0.3.31
-    es-module-lexer: ^2.0.0
+    es-module-lexer: ^3.0.0
     pathe: ^2.0.3
     unplugin: ^3.0.0
     unplugin-utils: ^0.3.1
-  checksum: 864bfb86e3f8cf3077d6f83e09b9963f38a7ae8b714d3faeb9f829a7be3c1b6ef1b270aecd46d68981d524351db844ca6122beb358f8ee0171325bb81e626e7f
+  checksum: aba212433c9fab46748e4b2b5bea14122cdfcf47f45861d7079d81299ba1c25c9b81db47418f569bc2f58f8b09dc05e8e0be231f8e3d1eba63029f7488745fbf
   languageName: node
   linkType: hard
 
