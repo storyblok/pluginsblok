@@ -12,6 +12,7 @@
     "lint:affected": "nx affected:lint",
     "build": "nx run-many --target=build"
   },
+  "packageManager": "pnpm@12.19.0",
   "workspaces": [
     "packages/*",
     "tools/*"
