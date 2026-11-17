@@ -55,7 +55,7 @@ We strive to keep pull requests as small as possible to facilitate more effectiv
 
 ## Requirements
 
-- Node.js 22.18.0
+- Node.js 26.13.1 (it doesn't bundle Corepack, so install pnpm directly or with `npm i -g corepack`)
 - pnpm 10.15.0
 
 > **Note**
