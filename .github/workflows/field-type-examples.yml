@@ -9,10 +9,14 @@ on:
     branches: [main]
     paths:
       - "apps/field-plugins/**"
+      - ".github/workflows/field-type-examples.yml"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # The root packageManager is pnpm; let Yarn run in the field plugins until they move into the workspace.
+    env:
+      SKIP_YARN_COREPACK_CHECK: 1
     strategy:
       matrix:
         plugin:
