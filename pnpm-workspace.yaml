@@ -6,6 +6,8 @@ packages:
   - packages/field-plugin/packages/lib-helpers/*
   # plugin monorepo internal tools
   - tools/*
+# pnpm 11+ ignores engine-strict in .npmrc; keep the root engines enforced.
+engineStrict: true
 allowBuilds:
   '@parcel/watcher': true
   core-js: true
