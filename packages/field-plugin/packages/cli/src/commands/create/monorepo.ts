@@ -43,6 +43,8 @@ const promptRepoName = async (dir: string) => {
   return name
 }
 
+const YARN_VERSION = '4.18.1'
+
 const specifyPackageManager = ({
   packageManager,
   repoDir,
@@ -57,7 +59,7 @@ const specifyPackageManager = ({
 
     json['scripts']['add-plugin'] += ` --packageManager ${packageManager}`
     json['packageManager'] =
-      packageManager === 'yarn' ? 'yarn@3.2.4' : 'pnpm@8.14.0'
+      packageManager === 'yarn' ? `yarn@${YARN_VERSION}` : 'pnpm@8.14.0'
 
     writeFileSync(
       resolve(repoDir, 'package.json'),
@@ -98,7 +100,8 @@ export const createMonorepo: CreateMonorepoFunc = async ({
     // skip yarn files if yarn is not the package manager
     const fileBasename = basename(file)
     if (
-      (fileBasename === 'yarn-3.2.4.cjs' || fileBasename === '.yarnrc.yml') &&
+      (fileBasename === `yarn-${YARN_VERSION}.cjs` ||
+        fileBasename === '.yarnrc.yml') &&
       packageManager !== 'yarn'
     ) {
       return
