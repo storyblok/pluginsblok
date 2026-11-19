@@ -52,8 +52,8 @@ This repository represents an ongoing migration from a polyrepo structure to a u
 
 ### Prerequisites
 
-- Node.js (v22 or later)
-- pnpm (v10 or later)
+- Node.js 26.13 or a later 26.x release (see `.nvmrc`)
+- pnpm 12 (see `packageManager` in `package.json`)
 - Git
 
 ### Setup
