@@ -52,6 +52,8 @@ The following examples live in their own Github repository.
 
 **Have an example?** Submit a PR or [open an issue](https://github.com/storyblok/pluginsblok/issues). We are happy to accept more examples from the community.
 
+The examples are being moved into the repository's pnpm workspace, so they share one lockfile and one install. Until an example is moved, install it with the package manager of its own lockfile. Each example keeps its own `.nvmrc`, so it still works when copied as a template.
+
 <details>
 <summary>Adding an example in this repository</summary>
 
