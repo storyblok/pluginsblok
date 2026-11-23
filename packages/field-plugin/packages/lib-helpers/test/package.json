@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "devDependencies": {
-    "typescript": "5.8.2"
+    "typescript": "catalog:"
   },
   "dependencies": {
     "@storyblok/field-plugin": "workspace:*",
-    "vitest": "2.1.9"
+    "vitest": "catalog:"
   }
 }

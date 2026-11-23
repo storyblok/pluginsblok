@@ -6,6 +6,11 @@ packages:
   - packages/field-plugin/packages/lib-helpers/*
   # plugin monorepo internal tools
   - tools/*
+catalog:
+  prettier: 3.5.3
+  typescript: 5.9.2
+  vite: 5.4.16
+  vitest: 2.1.9
 engineStrict: true
 sideEffectsCache: false
 publishBranch: main
