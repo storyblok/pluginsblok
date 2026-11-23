@@ -1,4 +1,4 @@
-import { type ISbStoryData } from 'storyblok-js-client';
+import type { ISbStoryData } from 'storyblok-js-client';
 
 export type StoriesResponse = {
 	stories: Story[];

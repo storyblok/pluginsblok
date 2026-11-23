@@ -1,4 +1,5 @@
-import StoryblokClient, { ISbStoriesParams } from 'storyblok-js-client';
+import type { ISbStoriesParams } from 'storyblok-js-client';
+import StoryblokClient from 'storyblok-js-client';
 
 export default defineEventHandler(
 	async (
