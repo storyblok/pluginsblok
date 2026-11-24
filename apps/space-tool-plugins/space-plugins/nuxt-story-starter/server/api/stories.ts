@@ -1,7 +1,8 @@
-import StoryblokClient, { ISbStoriesParams } from 'storyblok-js-client';
+import type { ISbStoriesParams } from 'storyblok-js-client';
+import StoryblokClient from 'storyblok-js-client';
 import { object, optional, number, string, pipe, toNumber } from 'valibot';
 import { parseQuery } from '../utils/parse';
-import { StoriesResponse, Story } from '~/types/story';
+import type { StoriesResponse, Story } from '~/types/story';
 
 export default defineEventHandler(async (event): Promise<StoriesResponse> => {
 	const { spaceId, accessToken } = event.context.appSession;

@@ -17,7 +17,10 @@
 	},
 	"devDependencies": {
 		"@nuxt/devtools": "^3.4.3",
+		"@nuxt/eslint-config": "^1.17.0",
 		"@types/jsonwebtoken": "^9.0.6",
+		"eslint": "^9.39.5",
+		"eslint-plugin-vuejs-accessibility": "^2.6.3",
 		"execa": "^8.0.1",
 		"h3": "^1.15.11",
 		"nuxt": "3.21.11",
