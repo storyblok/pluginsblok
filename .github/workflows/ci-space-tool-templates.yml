@@ -15,6 +15,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # The root packageManager is pnpm; let Corepack run Yarn in these standalone projects.
+    env:
+      COREPACK_ENABLE_STRICT: 0
     strategy:
       matrix:
         plugin:
@@ -33,7 +36,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 22.14.0
+          node-version-file: ${{ matrix.plugin }}.nvmrc
           cache: "yarn"
           cache-dependency-path: ${{ matrix.plugin }}yarn.lock
 

@@ -15,7 +15,7 @@ cd YOUR-PROJECT-NAME
 
 pnpm install && pnpm dev # You may remove "packageManager" from `package.json`
 # or
-yarn install && yarn dev # You may need to run `corepack enable` and `corepack prepare yarn@3.6.1`
+yarn install && yarn dev # You may need to run `npm install -g corepack && corepack enable` (Node 25+ no longer bundles Corepack)
 # or
 npm install && npm run dev # You may remove "packageManager" from `package.json`
 ```
