@@ -53,6 +53,15 @@ jobs:
           fi
         working-directory: ${{ matrix.plugin }}
 
+      - name: Type-check if script exists
+        run: |
+          if jq -e '.scripts.typecheck' package.json > /dev/null; then
+            yarn typecheck
+          else
+            echo "No typecheck script found, skipping."
+          fi
+        working-directory: ${{ matrix.plugin }}
+
       - name: Build starter
         run: yarn build
         working-directory: ${{ matrix.plugin }}
