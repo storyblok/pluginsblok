@@ -2227,18 +2227,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storyblok/app-extension-auth@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@storyblok/app-extension-auth@npm:2.2.1"
+"@storyblok/app-extension-auth@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "@storyblok/app-extension-auth@npm:2.2.4"
   dependencies:
-    "@storyblok/region-helper": ^1.3.0
+    "@storyblok/region-helper": ^1.3.1
     jsonwebtoken: ^9.0.0
     openid-client: ^5.7.1
-  checksum: c046f0d2bebdde25f47741904feab058373c846483c0c6c2e7361318b239ba9fcaf64517e9b540a3d9b9e72e781e81d0a5c2718138ab8e15ef111d4da8cf74dd
+  checksum: f279e447642d802d2e77f9fc698a04d286350b22af879313ecbff7bd5b60e9200ec2ae8d2073259cab10134fbb122939123ef009e7db7439312a2b5f663411bb
   languageName: node
   linkType: hard
 
-"@storyblok/region-helper@npm:^1.3.0, @storyblok/region-helper@npm:^1.3.1":
+"@storyblok/region-helper@npm:^1.3.1":
   version: 1.3.1
   resolution: "@storyblok/region-helper@npm:1.3.1"
   checksum: 9b11d2ed277c991d89361f798dd7d9f03164b9a035646c83dcc012633641bb95027960c8e4740b9debfce15f399895ae922d321d25a3e54e9defae1ee6a9a09e
@@ -2251,7 +2251,7 @@ __metadata:
   dependencies:
     "@nuxt/devtools": ^3.4.3
     "@nuxt/eslint-config": ^1.17.0
-    "@storyblok/app-extension-auth": ^2.2.1
+    "@storyblok/app-extension-auth": ^2.2.4
     "@storyblok/region-helper": ^1.3.1
     "@types/jsonwebtoken": ^9.0.6
     eslint: ^9.39.5
