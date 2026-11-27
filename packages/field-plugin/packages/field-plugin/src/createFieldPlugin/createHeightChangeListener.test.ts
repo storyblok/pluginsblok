@@ -57,7 +57,11 @@ const mockResizeObserver = () => {
   let mockEvents: (() => void)[] = []
   const mockResize = () => mockEvents.forEach((it) => it())
 
-  global.ResizeObserver = vi.fn().mockImplementation((onEvent: () => void) => {
+  // A regular function, because vitest 4 mocks can only be called with `new`
+  // when their implementation is a function or class, not an arrow function.
+  globalThis.ResizeObserver = vi.fn().mockImplementation(function (
+    onEvent: () => void,
+  ) {
     mockEvents = [...mockEvents, onEvent]
     const disconnect = () => {
       mockEvents = mockEvents.filter((it) => it !== onEvent)
