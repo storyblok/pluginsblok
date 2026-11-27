@@ -1,4 +1,1 @@
-packages/app-extension-auth @storyblok/plugins @storyblok/front-end
-packages/field-plugin @storyblok/plugins
-apps/field-plugins/* @storyblok/plugins @storyblok/front-end
-apps/space-tool-plugins/* @storyblok/plugins @storyblok/front-end
+* @storyblok/xpg-ai-extensibility
