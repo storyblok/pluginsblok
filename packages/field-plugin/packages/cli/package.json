@@ -10,6 +10,9 @@
     "bin.js",
     "dist"
   ],
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/storyblok/pluginsblok.git",
