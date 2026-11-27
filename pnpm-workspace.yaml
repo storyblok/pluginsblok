@@ -24,3 +24,9 @@ overrides:
   # vite-plugin-dts 4.2.1 pins it to 7.47.7. Remove this once vite-plugin-dts
   # and @microsoft/api-extractor (>= 7.59, no lodash dependency) are bumped.
   'lodash@~4.17.15': ^4.18.1
+packageExtensions:
+  # @vue/test-utils 2 requires vue but doesn't declare it, so in this workspace
+  # it loads the hoisted Vue 2 of the vue2 template.
+  '@vue/test-utils@2':
+    peerDependencies:
+      vue: ^3.0.0

@@ -263,6 +263,8 @@ catalogs:
 overrides:
   lodash@~4.17.15: ^4.18.1
 
+packageExtensionsChecksum: sha256-zJ/ZBttW9koePImDzqWWniQtXC8OWBJAb74o3ymZ+Gw=
+
 importers:
 
   .:
@@ -3830,6 +3832,8 @@ packages:
 
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
+    peerDependencies:
+      vue: ^3.0.0
 
   '@yarnpkg/lockfile@1.1.0':
     resolution: {integrity: sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==}
@@ -10907,7 +10911,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.28.3
       '@testing-library/dom': 9.3.4
-      '@vue/test-utils': 2.4.6
+      '@vue/test-utils': 2.4.6(vue@3.5.44(typescript@5.9.2))
       vue: 3.5.44(typescript@5.9.2)
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.44
@@ -11653,9 +11657,10 @@ snapshots:
 
   '@vue/shared@3.5.44': {}
 
-  '@vue/test-utils@2.4.6':
+  '@vue/test-utils@2.4.6(vue@3.5.44(typescript@5.9.2))':
     dependencies:
       js-beautify: 1.15.4
+      vue: 3.5.44(typescript@5.9.2)
       vue-component-type-helpers: 2.2.12
 
   '@yarnpkg/lockfile@1.1.0': {}
