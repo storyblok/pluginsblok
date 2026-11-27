@@ -12,7 +12,7 @@ const externalDependencies = [
 // https://vitejs.dev/config/
 export default defineConfig({
   test: {
-    exclude: [...configDefaults.exclude, 'templates', 'dist'],
+    exclude: [...configDefaults.exclude, 'templates/**', 'dist/**'],
     globals: true,
   },
   build: {
