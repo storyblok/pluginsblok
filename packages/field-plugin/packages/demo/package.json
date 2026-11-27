@@ -15,8 +15,8 @@
     "@mui/material": "5.17.1",
     "@storyblok/field-plugin": "workspace:*",
     "@storyblok/mui": "0.3.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@types/react": "18.3.7",

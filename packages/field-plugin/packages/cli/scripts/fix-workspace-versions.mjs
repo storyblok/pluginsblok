@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { parse } from 'yaml'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const cliRoot = path.resolve(__dirname, '..') // → .../field-plugin/packages/cli
@@ -32,8 +33,22 @@ function collectPackages(dir) {
 // Explicitly collect packages from root "packages"
 collectPackages(path.join(repoRoot, 'packages'))
 
+const workspace = parse(
+  fs.readFileSync(path.join(repoRoot, 'pnpm-workspace.yaml'), 'utf-8'),
+)
+const catalogs = { default: workspace.catalog ?? {}, ...workspace.catalogs }
+
+function resolveCatalog(dep, spec) {
+  const name = spec.replace('catalog:', '') || 'default'
+  const version = catalogs[name]?.[dep]
+  if (!version) {
+    throw new Error(`No version for ${dep} in catalog "${name}"`)
+  }
+  return version
+}
+
 /**
- * Walk dist/templates and replace workspace:* with actual versions
+ * Walk dist/templates and replace workspace:* and catalog: with actual versions
  */
 function walk(dir) {
   if (!fs.existsSync(dir)) return
@@ -64,6 +79,9 @@ function walk(dir) {
                     : actual
                 changed = true
               }
+            } else if (typeof spec === 'string' && spec.startsWith('catalog:')) {
+              pkg[sec][dep] = resolveCatalog(dep, spec)
+              changed = true
             }
           }
         }
@@ -78,7 +96,9 @@ function walk(dir) {
 
 if (fs.existsSync(distTemplatesDir)) {
   walk(distTemplatesDir)
-  console.log('✅ workspace:* replaced with actual versions in dist/templates')
+  console.log(
+    '✅ workspace:* and catalog: replaced with actual versions in dist/templates',
+  )
 } else {
   console.warn('⚠️ dist/templates does not exist yet. Did you run the build?')
 }
