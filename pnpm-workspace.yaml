@@ -7,10 +7,15 @@ packages:
   # plugin monorepo internal tools
   - tools/*
 catalog:
+  '@vitest/ui': 4.1.12
+  jsdom: 31.0.1
   prettier: 3.5.3
+  react: ^18.3.1
+  react-dom: ^18.3.1
   typescript: 5.9.2
   vite: 6.4.6
   vitest: 4.1.12
+  vue: ^3.5.44
 engineStrict: true
 sideEffectsCache: false
 publishBranch: main

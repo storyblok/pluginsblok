@@ -46,7 +46,8 @@
     "@types/prompts": "2.4.9",
     "temp-dir": "3.0.0",
     "vite": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "yaml": "2.9.0"
   },
   "nx": {
     "implicitDependencies": [

@@ -13,19 +13,19 @@
   },
   "dependencies": {
     "@storyblok/field-plugin": "workspace:*",
-    "vue": "^3.5.44"
+    "vue": "catalog:"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/user-event": "14.6.1",
     "@testing-library/vue": "8.1.0",
     "@vitejs/plugin-vue": "^5.2.4",
-    "@vitest/ui": "4.1.12",
-    "jsdom": "23.0.1",
-    "typescript": "5.9.2",
-    "vite": "6.4.6",
+    "@vitest/ui": "catalog:",
+    "jsdom": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
     "vite-plugin-css-injected-by-js": "3.1.0",
-    "vitest": "4.1.12",
+    "vitest": "catalog:",
     "vue-tsc": "2.2.8"
   }
 }

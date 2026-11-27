@@ -5,8 +5,8 @@
   "type": "module",
   "dependencies": {
     "@storyblok/field-plugin": "workspace:*",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@types/react": "^18.3.10",
