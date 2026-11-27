@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.10",
-    "vite": "7.3.7",
+    "vite": "7.3.8",
     "vite-plugin-css-injected-by-js": "4.0.1"
   }
 }
