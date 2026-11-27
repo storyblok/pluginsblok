@@ -26,14 +26,17 @@
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "5.55.0",
     "@typescript-eslint/parser": "5.55.0",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "@storyblok/field-plugin-cli": "^0.0.1-beta.1",
     "eslint": "7.32.0",
     "eslint-plugin-react": "7.30.0",
     "typescript": "^5.0.4",
-    "vite": "^4.2.0",
+    "vite": "^6.4.6",
     "vite-plugin-css-injected-by-js": "3.1.0",
-    "vitest": "^2.1.9",
+    "vitest": "^3.2.7",
     "prettier": "^2.8.8"
+  },
+  "resolutions": {
+    "vite": "^6.4.6"
   }
 }
